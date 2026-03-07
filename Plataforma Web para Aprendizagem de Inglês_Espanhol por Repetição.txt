@@ -1,0 +1,315 @@
+﻿Plataforma Web para Aprendizagem de Inglês/Espanhol por Repetição
+1. Introdução
+1.1 Propósito
+Este documento define os requisitos funcionais e técnicos para o desenvolvimento de uma plataforma web destinada ao aprendizado e memorização de idiomas (inglês e/ou espanhol) por meio de exercícios diários de repetição, baseados em modos gramaticais (tempos verbais, modos verbais, condicionais, etc.) e categorias temáticas.
+1.2 Público-alvo
+Estudantes de nível B2 ou superior (intermediário-avançado a avançado) que desejam consolidar estruturas gramaticais e expandir vocabulário em contexto.
+1.3 Objetivos de Aprendizagem
+* Memorizar a forma e o uso de diferentes modos verbais por meio de repetição espaçada.
+* Praticar a transformação de frases entre as formas afirmativa, negativa e interrogativa.
+* Associar verbos e definições a contextos reais e variados (cozinha, educação, trabalho, Bíblia, etc.).
+* Desenvolver fluência e precisão no uso de estruturas complexas (B2+).
+2. Conceito Geral
+O usuário realizará sessões diárias de estudo. Cada dia será focado em uma categoria temática (ex.: Cozinha, Tecnologia, Saúde, Bíblia) e em um modo gramatical (ex.: Simple Present, Present Continuous, Past Perfect, etc.). Dentro de cada modo, o sistema apresentará:
+* Definição do modo (em português e/ou espanhol, dependendo da configuração)
+* Verbo de exemplo e sua definição
+* Frases de exemplo (afirmativa, negativa, interrogativa)
+O usuário deverá ler e reescrever as frases manualmente, reforçando a estrutura.
+O ciclo de repetição segue um padrão de três dias:
+* Dia 1: Frases afirmativas
+* Dia 2: Frases negativas
+* Dia 3: Frases interrogativas
+Nos três dias seguintes, o sistema apresenta novas frases e novos verbos dentro do mesmo modo (ou alterna para um novo modo), mantendo a progressão.
+A cada dia, a categoria temática pode ser diferente, garantindo variedade de vocabulário e contexto.
+Para a categoria Bíblia, as frases devem ser extraídas de traduções reconhecidas (ex.: King James Version para inglês, Reina-Valera para espanhol) e incluir a referência bíblica completa (livro, capítulo, versículo).
+3. Abordagem Pedagógica
+A plataforma apoia-se nos seguintes princípios de aprendizagem de idiomas:
+* Repetição Espaçada: O sistema agenda revisões de cada modo em intervalos crescentes para transferir o conhecimento para a memória de longo prazo.
+* Active Recall (Recordação Ativa): O usuário não apenas lê, mas reescreve as frases, forçando o cérebro a recuperar a estrutura.
+* Prática de Transformação: Alternar entre afirmativa, negativa e interrogativa desenvolve flexibilidade gramatical.
+* Aprendizagem Contextualizada: Categorias temáticas conectam a gramática a situações reais, aumentando a retenção.
+* Input Autêntico: A categoria Bíblia expõe o aluno a linguagem formal e arcaica (quando aplicável), útil para níveis avançados.
+4. Histórias de Usuário
+* Como estudante, quero visualizar o modo do dia, sua definição e exemplos para entender o uso.
+* Como estudante, quero ler e reescrever frases para praticar ativamente.
+* Como estudante, quero alternar entre inglês e espanhol para estudar ambos os idiomas.
+* Como estudante, quero acompanhar meu progresso diário e meu histórico de acertos.
+* Como estudante, quero ter acesso a frases da Bíblia com referências para estudo pessoal.
+* Como administrador, quero adicionar/editar modos, categorias, verbos e frases via interface simples (ou arquivo JSON).
+5. Requisitos Funcionais
+5.1 Módulo de Usuário (opcional)
+* Cadastro/login (e-mail ou rede social) para salvar progresso individual.
+* Configuração de idioma alvo (inglês, espanhol, ou ambos alternados).
+* Definição de meta diária (ex.: quantos modos por dia).
+5.2 Dashboard Principal
+* Exibição do plano de estudo do dia: modo, categoria, tipo de frase (afirmativa/negativa/interrogativa).
+* Indicador de progresso diário (ex.: frases completadas / total).
+* Calendário mostrando histórico de dias estudados.
+* Botão para iniciar a sessão de estudo.
+5.3 Sessão de Estudo
+Em cada dia, o usuário estuda todos os modos gramaticais disponíveis (ex.: Simple Present, Present Continuous, Past Simple, etc.), mas todos com o mesmo tipo de frase (afirmativa, negativa ou interrogativa), conforme o ciclo de 3 dias.
+A interface apresenta, para cada modo, sequencialmente:
+1. Cabeçalho: Modo (ex.: SIMPLE PRESENT) e categoria do bloco atual (ex.: Cozinha).
+2. Definição do Modo: Texto explicativo no idioma alvo (inglês/espanhol).
+3. Verbo e Definição: Verbo de exemplo + definição (conforme o bloco atual).
+4. Frase do tipo do dia: Uma frase no tipo correspondente ao dia (afirmativa/negativa/interrogativa).
+5. Campo de Reescrita: O usuário digita a frase para praticar a escrita.
+6. Botão de Verificação: Feedback imediato (certo/errado). Se errado, exibe a frase correta.
+7. Botão "Próximo Modo": Avança para o próximo modo da lista.
+✅ O usuário não escolhe quais modos estudar — todos são obrigatórios diariamente, garantindo exposição constante e repetição espaçada de todos os tempos verbais e modos.
+________________
+
+
+5.4 Ciclo de Repetição (Base Pedagógica)
+📆 Ciclo de 3 dias (tipo de frase)
+Dia
+	Tipo de Frase
+	1
+	Afirmativa (+)
+	2
+	Negativa (–)
+	3
+	Interrogativa (?)
+	🔁 Ciclo de 3 dias (conteúdo novo)
+Após cada bloco de 3 dias, o sistema troca as frases e verbos para o mesmo modo, usando um novo conjunto de exemplos (nova categoria ou novos verbos na mesma categoria).
+Exemplo prático (Modo: SIMPLE PRESENT)
+Dias
+	Categoria
+	Verbo
+	Frase (tipo do dia)
+	1, 2, 3
+	Cozinha
+	slice
+	+ / – / ? sobre fatiar
+	4, 5, 6
+	Cozinha
+	chop
+	+ / – / ? sobre picar
+	7, 8, 9
+	Sala
+	vacuum
+	+ / – / ? sobre aspirar
+	10, 11, 12
+	Sala
+	dust
+	+ / – / ? sobre tirar pó
+	📌 Isso garante que o aluno:
+* Revise todos os modos todos os dias.
+* Pratique as três formas da frase em sequência.
+* Aprenda novos verbos e contextos a cada 3 dias.
+________________
+
+
+5.5 Banco de Dados (JSON) — Ajuste para o Ciclo
+A estrutura do JSON deve permitir múltiplos exemplos (verbos + frases) por modo e categoria, para que o sistema possa alternar os conjuntos a cada 3 dias.
+json
+   * {
+   *   "modes": [
+   *     { "id": "simple_present", "name": { "en": "SIMPLE PRESENT", "es": "PRESENTE SIMPLE" } }
+   *   ],
+   *   "categories": [
+   *     { "id": "kitchen", "name": { "en": "Kitchen", "es": "Cocina" } }
+   *   ],
+   *   "verbs": [
+   *     { "id": "slice", "word": { "en": "slice", "es": "cortar" } }
+   *   ],
+   *   "sentence_sets": [
+   *     {
+   *       "id": "set_1",
+   *       "mode_id": "simple_present",
+   *       "category_id": "kitchen",
+   *       "verb_id": "slice",
+   *       "examples": {
+   *         "en": {
+   *           "affirmative": "She slices fresh tomatoes for every salad.",
+   *           "negative": "I don't slice bread by hand; I use a cutting machine.",
+   *           "interrogative": "Do you slice the vegetables before boiling them?"
+   *         },
+   *         "es": {
+   *           "affirmative": "Ella corta tomates frescos para cada ensalada.",
+   *           "negative": "No corto el pan a mano; uso una máquina.",
+   *           "interrogative": "¿Cortas las verduras antes de hervirlas?"
+   *         }
+   *       },
+   *       "bible_reference": null
+   *     },
+   *     {
+   *       "id": "set_2",
+   *       "mode_id": "simple_present",
+   *       "category_id": "kitchen",
+   *       "verb_id": "chop",
+   *       "examples": { ... }
+   *     }
+   *   ]
+}
+________________
+
+
+5.6 Algoritmo de Agendamento Diário
+1. Ao iniciar o dia, o sistema identifica o tipo de frase do dia (com base no contador global de dias desde o início do estudo do usuário).
+2. Para cada modo cadastrado, o sistema seleciona o próximo conjunto de frases (sentence_set) ainda não utilizado para aquele modo.
+   * Se já usou todos os conjuntos, reinicia do primeiro.
+3. O usuário estuda todos os modos, um após o outro, com o mesmo tipo de frase.
+Exemplo de Estado do Usuário (armazenado localmente ou no backend):
+json
+   * {
+   *   "user_id": 1,
+   *   "global_day_counter": 4,  // Dia 4 = novo bloco de 3 dias, tipo = afirmativa
+   *   "mode_progress": {
+   *     "simple_present": {
+   *       "last_set_index": 0,   // último conjunto usado (set_1)
+   *       "next_set_index": 1    // próximo conjunto (set_2)
+   *     },
+   *     "present_continuous": {
+   *       "last_set_index": 2,
+   *       "next_set_index": 3
+   *     }
+   *   }
+}
+________________
+
+
+5.7 Dashboard — Visualização Corrigida
+O dashboard deve mostrar claramente:
+* Tipo de frase do dia (Afirmativa / Negativa / Interrogativa).
+* Lista de todos os modos que serão estudados hoje.
+* Progresso: quantos modos já foram concluídos.
+text
+   * +-------------------------------------------------+
+   * |  📅 Dia 4 de estudo                             |
+   * |  🟢 Hoje: Frases AFIRMATIVAS (novo bloco)       |
+   * |                                                  |
+   * |  Modos do dia (8 no total):                      |
+   * |  ☐ SIMPLE PRESENT (Cozinha – fatiar)             |
+   * |  ☐ PRESENT CONTINUOUS (Sala – aspirar)           |
+   * |  ☐ SIMPLE PAST (Banheiro – esfregar)             |
+   * |  ☐ PAST CONTINUOUS (Quarto – dobrar)             |
+   * |  ☐ PRESENT PERFECT (Garagem – desligar)          |
+   * |  ☐ ...                                           |
+   * |                                                  |
+   * |  Progresso: 2/8 concluídos                       |
+   * |  [ Continuar estudo ]                            |
++-------------------------------------------------+
+________________
+
+
+5.8 Categoria Bíblia — Exemplo de Uso
+Para a categoria Bíblia, os conjuntos de frases devem conter versículos reais e a referência.
+json
+   * {
+   *   "id": "bible_set_1",
+   *   "mode_id": "simple_present",
+   *   "category_id": "bible",
+   *   "verb_id": "say",
+   *   "examples": {
+   *     "en": {
+   *       "affirmative": "Jesus says to him, 'I am the way, and the truth, and the life.'",
+   *       "negative": "He does not say that all roads lead to God.",
+   *       "interrogative": "Does the Lord say that He will provide?"
+   *     }
+   *   },
+   *   "bible_reference": {
+   *     "book": "John",
+   *     "chapter": 14,
+   *     "verse": 6
+   *   }
+}
+Na interface, a referência deve ser exibida junto da frase:
+"Jesus says to him, 'I am the way, and the truth, and the life.'" — John 14:6 (KJV)
+________________
+
+
+✅ Resumo da Correção
+* ❌ Antes (incorreto): Sistema escolhia poucos modos por dia.
+* ✅ Agora (correto): Todos os modos são estudados todos os dias, alternando apenas o tipo de frase (afirmativa/negativa/interrogativa) em ciclos de 3 dias.
+* ✅ A cada 3 dias, novo conjunto de exemplos (novo verbo + novas frases) é introduzido para cada modo.
+* ✅ O progresso é salvo para garantir que o aluno avance pelos conjuntos de forma ordenada.
+6. Requisitos Não Funcionais
+* Usabilidade: Interface limpa, intuitiva e responsiva (funciona em desktops, tablets e smartphones).
+* Acessibilidade: Contraste adequado, suporte a leitores de tela (WCAG 2.1 AA).
+* Desempenho: Carregamento rápido das páginas, especialmente ao acessar o JSON.
+* Offline-first (opcional): Armazenar dados no navegador (IndexedDB) para permitir estudo sem internet, sincronizando progresso quando online.
+* Internacionalização: Suporte total a inglês e espanhol (UI e conteúdo). O usuário pode escolher o idioma da interface e o idioma alvo de estudo.
+7. Arquitetura Técnica Sugerida
+* Frontend: Framework moderno (React, Vue.js ou Svelte) com gerenciamento de estado (Redux, Pinia).
+* Backend (opcional): API REST (Node.js + Express, ou serverless) para autenticação e sincronização de progresso. Inicialmente pode-se usar apenas armazenamento local (LocalStorage/IndexedDB).
+* Banco de Dados: JSON estático + IndexedDB para progresso do usuário. Para versão escalável, MongoDB ou PostgreSQL.
+* Hospedagem: Vercel, Netlify ou similar para frontend; backend em serviço cloud.
+8. Fluxo de Uso Detalhado
+1. Acesso inicial: O usuário acessa a plataforma. Se não logado, pode usar como visitante (progresso salvo apenas localmente) ou criar conta.
+2. Configuração (opcional): Define idioma alvo (inglês/espanhol/ambos) e meta diária.
+3. Dashboard: O sistema calcula quais modos precisam ser revisados hoje (baseado no algoritmo de repetição espaçada) e seleciona uma categoria aleatória para cada modo (ou a mesma para todos, conforme configuração).
+   * Exibe: "Hoje você vai estudar: Simple Present (Cozinha) – Frases Afirmativas"
+4. Sessão de estudo:
+   * Apresenta a definição do modo, o verbo, sua definição e a frase (afirmativa).
+   * Usuário lê a frase.
+   * Usuário digita a frase no campo.
+   * Ao enviar, recebe feedback visual (verde/vermelho). Se erro, mostra a frase correta e permite nova tentativa (opcional).
+   * Após sucesso, avança para o próximo modo (se houver) ou finaliza a sessão.
+5. Registro de progresso: Cada acerto é registrado, atualizando o nível do modo. O sistema agenda a próxima revisão.
+6. Finalização: Parabéns e resumo do dia. Incentivo para retornar amanhã.
+9. Exemplo de Interface (Mockup Textual)
+Dashboard
+text
++-------------------------------------------+
+|  📅 Plano de hoje (15/03/2026)           |
+|                                           |
+|  [✅] SIMPLE PRESENT (Kitchen)            |
+|       Frases Afirmativas                  |
+|                                           |
+|  [⏳] PAST CONTINUOUS (Bedroom)           |
+|       Frases Negativas                     |
+|                                           |
+|  [ ] FUTURE SIMPLE (Office)               |
+|       Frases Interrogativas                |
+|                                           |
+|  ➕ Iniciar Sessão                         |
++-------------------------------------------+
+|  Progresso: 1/3 concluídos                |
++-------------------------------------------+
+Tela de Estudo
+text
++-------------------------------------------+
+|  Modo: SIMPLE PRESENT (Kitchen)           |
+|  Definição: Used for habits and routines. |
+|                                           |
+|  Verbo: slice / cortar                    |
+|  Definição: to cut something into thin    |
+|  pieces / dividir algo em trozos finos    |
+|                                           |
+|  Frase afirmativa:                        |
+|  "She slices fresh tomatoes for every     |
+|  salad."                                  |
+|                                           |
+|  Reescreva a frase:                        |
+|  [_________________________________]       |
+|  [ Verificar ]                             |
+|                                           |
+|  (feedback)                                |
++-------------------------------------------+
+10. Considerações sobre o Conteúdo (Nível B2+)
+* Todas as frases devem refletir estruturas gramaticais e vocabulário apropriados para o nível B2 ou superior (incluindo phrasal verbs, collocations, expressões idiomáticas, etc.).
+* Os modos gramaticais devem incluir: Simple Present, Present Continuous, Simple Past, Past Continuous, Present Perfect, Present Perfect Continuous, Past Perfect, Past Perfect Continuous, Future Simple, Future Continuous, Future Perfect, Future Perfect Continuous, First Conditional, Second Conditional, Third Conditional, Zero Conditional, Modals (can, could, should, would, might, must, etc.), Passive Voice (em diversos tempos).
+* Cada modo deve ter pelo menos 3 verbos diferentes por categoria, para garantir variedade.
+* As definições dos verbos devem ser claras e sucintas, preferencialmente no mesmo idioma alvo.
+11. Requisitos de Segurança e Privacidade
+* Dados do usuário (progresso) devem ser armazenados de forma segura.
+* Se houver login, utilizar autenticação segura (JWT, OAuth).
+* Em conformidade com LGPD (Lei Geral de Proteção de Dados), informar o usuário sobre coleta de dados.
+12. Possíveis Melhorias Futuras
+* Áudio: Integrar API de síntese de voz (Web Speech API) para ouvir a pronúncia.
+* Gamificação: Conquistas, sequências (streaks), pontos por acertos.
+* Comunidade: Usuários podem sugerir novas frases ou categorias.
+* Correção inteligente: Além da correspondência exata, permitir variações aceitáveis (contrações, pontuação).
+* Exportação de progresso: Relatórios em PDF.
+* Suporte a mais idiomas (francês, alemão, etc.).
+13. Glossário
+* Modo: Estrutura gramatical (tempo verbal, modo, condicional, etc.).
+* Categoria: Tema contextual (cozinha, tecnologia, etc.).
+* Frase afirmativa/negativa/interrogativa: Variações da mesma sentença.
+________________
+
+
+Elaborado por: [Seu Nome/Equipe]
+Data: 07/03/2026
+Versão: 1.0

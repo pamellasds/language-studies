@@ -1,0 +1,1825 @@
+{
+  "modes": [
+    { "id": "simple_present", "name": { "en": "SIMPLE PRESENT", "es": "PRESENTE SIMPLE" }, "definition": { "en": "Used for habits, general truths, and permanent situations.", "es": "Se usa para hábitos, verdades generales y situaciones permanentes." } },
+    { "id": "present_continuous", "name": { "en": "PRESENT CONTINUOUS", "es": "PRESENTE CONTINUO" }, "definition": { "en": "Used for actions happening now or temporary situations.", "es": "Se usa para acciones que ocurren ahora o situaciones temporales." } },
+    { "id": "simple_past", "name": { "en": "SIMPLE PAST", "es": "PASADO SIMPLE" }, "definition": { "en": "Used for completed actions in the past.", "es": "Se usa para acciones completadas en el pasado." } },
+    { "id": "past_continuous", "name": { "en": "PAST CONTINUOUS", "es": "PASADO CONTINUO" }, "definition": { "en": "Used for interrupted or ongoing past actions.", "es": "Se usa para acciones continuas o interrumpidas en el pasado." } },
+    { "id": "present_perfect", "name": { "en": "PRESENT PERFECT", "es": "PRESENTE PERFECTO" }, "definition": { "en": "Used for actions with results relevant to the present.", "es": "Se usa para acciones con resultados relevantes en el presente." } },
+    { "id": "present_perfect_continuous", "name": { "en": "PRESENT PERFECT CONTINUOUS", "es": "PRESENTE PERFECTO CONTINUO" }, "definition": { "en": "Used for actions that started in the past and continue now.", "es": "Se usa para acciones que comenzaron en el pasado y continúan ahora." } },
+    { "id": "past_perfect", "name": { "en": "PAST PERFECT", "es": "PASADO PERFECTO" }, "definition": { "en": "Used for actions completed before another in the past.", "es": "Se usa para acciones completadas antes de otra en el pasado." } },
+    { "id": "past_perfect_continuous", "name": { "en": "PAST PERFECT CONTINUOUS", "es": "PASADO PERFECTO CONTINUO" }, "definition": { "en": "Used for ongoing past actions before another past event.", "es": "Se usa para acciones continuas antes de otra acción pasada." } },
+    { "id": "future_simple", "name": { "en": "FUTURE SIMPLE", "es": "FUTURO SIMPLE" }, "definition": { "en": "Used for predictions, promises, or spontaneous decisions.", "es": "Se usa para predicciones, promesas o decisiones espontáneas." } },
+    { "id": "future_continuous", "name": { "en": "FUTURE CONTINUOUS", "es": "FUTURO CONTINUO" }, "definition": { "en": "Used for actions in progress at a specific future time.", "es": "Se usa para acciones en progreso en un momento futuro específico." } },
+    { "id": "future_perfect", "name": { "en": "FUTURE PERFECT", "es": "FUTURO PERFECTO" }, "definition": { "en": "Used for actions completed before a specific future time.", "es": "Se usa para acciones completadas antes de un momento futuro específico." } },
+    { "id": "future_perfect_continuous", "name": { "en": "FUTURE PERFECT CONTINUOUS", "es": "FUTURO PERFECTO CONTINUO" }, "definition": { "en": "Used for actions ongoing until a specific future point.", "es": "Se usa para acciones que continuarán hasta un punto futuro." } },
+    { "id": "zero_conditional", "name": { "en": "ZERO CONDITIONAL", "es": "CONDICIONAL CERO" }, "definition": { "en": "Expresses general truths and scientific facts.", "es": "Expresa verdades generales y hechos científicos." } },
+    { "id": "first_conditional", "name": { "en": "FIRST CONDITIONAL", "es": "PRIMER CONDICIONAL" }, "definition": { "en": "Expresses real future conditions.", "es": "Expresa condiciones reales futuras." } },
+    { "id": "second_conditional", "name": { "en": "SECOND CONDITIONAL", "es": "SEGUNDO CONDICIONAL" }, "definition": { "en": "Expresses hypothetical present or future situations.", "es": "Expresa situaciones hipotéticas presentes o futuras." } },
+    { "id": "third_conditional", "name": { "en": "THIRD CONDITIONAL", "es": "TERCER CONDICIONAL" }, "definition": { "en": "Expresses hypothetical past situations.", "es": "Expresa situaciones hipotéticas pasadas." } },
+    { "id": "modal_can", "name": { "en": "MODAL: CAN", "es": "MODAL: PODER" }, "definition": { "en": "Expresses ability or possibility.", "es": "Expresa habilidad o posibilidad." } },
+    { "id": "modal_could", "name": { "en": "MODAL: COULD", "es": "MODAL: PODRÍA" }, "definition": { "en": "Expresses past ability or polite suggestion.", "es": "Expresa habilidad pasada o sugerencia cortés." } },
+    { "id": "modal_should", "name": { "en": "MODAL: SHOULD", "es": "MODAL: DEBERÍA" }, "definition": { "en": "Expresses advice or mild obligation.", "es": "Expresa consejo u obligación leve." } },
+    { "id": "modal_would", "name": { "en": "MODAL: WOULD", "es": "MODAL: HARÍA" }, "definition": { "en": "Expresses hypothetical situations or politeness.", "es": "Expresa situaciones hipotéticas o cortesía." } },
+    { "id": "modal_might", "name": { "en": "MODAL: MIGHT / MAY", "es": "MODAL: PODRÍA / PUEDE QUE" }, "definition": { "en": "Expresses possibility or permission.", "es": "Expresa posibilidad o permiso." } },
+    { "id": "modal_must", "name": { "en": "MODAL: MUST", "es": "MODAL: DEBE" }, "definition": { "en": "Expresses necessity or logical deduction.", "es": "Expresa necesidad o deducción lógica." } },
+    { "id": "passive_present_simple", "name": { "en": "PASSIVE VOICE – PRESENT SIMPLE", "es": "VOZ PASIVA – PRESENTE SIMPLE" }, "definition": { "en": "Describes actions done to the subject in present time.", "es": "Describe acciones hechas al sujeto en el presente." } },
+    { "id": "passive_past_simple", "name": { "en": "PASSIVE VOICE – PAST SIMPLE", "es": "VOZ PASIVA – PASADO SIMPLE" }, "definition": { "en": "Describes actions done to the subject in the past.", "es": "Describe acciones hechas al sujeto en el pasado." } },
+    { "id": "passive_present_perfect", "name": { "en": "PASSIVE VOICE – PRESENT PERFECT", "es": "VOZ PASIVA – PRESENTE PERFECTO" }, "definition": { "en": "Describes actions done with present relevance.", "es": "Describe acciones hechas con relevancia presente." } },
+    { "id": "passive_modal", "name": { "en": "PASSIVE VOICE – MODAL", "es": "VOZ PASIVA – MODAL" }, "definition": { "en": "Expresses possibility or obligation in passive form.", "es": "Expresa posibilidad u obligación en forma pasiva." } }
+  ],
+  "categories": [
+    { "id": "kitchen", "name": { "en": "Kitchen", "es": "Cocina" } },
+    { "id": "living_room", "name": { "en": "Living Room", "es": "Sala de estar" } },
+    { "id": "bathroom", "name": { "en": "Bathroom", "es": "Baño" } },
+    { "id": "bedroom", "name": { "en": "Bedroom", "es": "Dormitorio" } },
+    { "id": "garage", "name": { "en": "Garage", "es": "Garaje" } },
+    { "id": "garden", "name": { "en": "Garden", "es": "Jardín" } },
+    { "id": "home_office", "name": { "en": "Home Office", "es": "Oficina en casa" } },
+    { "id": "research", "name": { "en": "Research", "es": "Investigación" } },
+    { "id": "technology", "name": { "en": "Technology", "es": "Tecnología" } },
+    { "id": "education", "name": { "en": "Education", "es": "Educación" } },
+    { "id": "health", "name": { "en": "Health", "es": "Salud" } },
+    { "id": "blockchain", "name": { "en": "Blockchain", "es": "Blockchain" } },
+    { "id": "software_dev", "name": { "en": "Software Development", "es": "Desarrollo de Software" } },
+    { "id": "academic_writing", "name": { "en": "Academic Writing", "es": "Redacción Académica" } },
+    { "id": "environment", "name": { "en": "Environment", "es": "Medio ambiente" } },
+    { "id": "society", "name": { "en": "Society", "es": "Sociedad" } },
+    { "id": "culture", "name": { "en": "Culture", "es": "Cultura" } },
+    { "id": "business", "name": { "en": "Business", "es": "Negocios" } },
+    { "id": "innovation", "name": { "en": "Innovation", "es": "Innovación" } },
+    { "id": "workplace", "name": { "en": "Workplace", "es": "Lugar de trabajo" } },
+    { "id": "science", "name": { "en": "Science", "es": "Ciencia" } },
+    { "id": "work", "name": { "en": "Work", "es": "Trabajo" } },
+    { "id": "travel", "name": { "en": "Travel", "es": "Viajes" } },
+    { "id": "career", "name": { "en": "Career", "es": "Carrera" } },
+    { "id": "media", "name": { "en": "Media", "es": "Medios" } },
+    { "id": "security", "name": { "en": "Security", "es": "Seguridad" } },
+    { "id": "history", "name": { "en": "History", "es": "Historia" } },
+    { "id": "law", "name": { "en": "Law", "es": "Ley" } },
+    { "id": "ethics", "name": { "en": "Ethics", "es": "Ética" } },
+    { "id": "communication", "name": { "en": "Communication", "es": "Comunicación" } },
+    { "id": "psychology", "name": { "en": "Psychology", "es": "Psicología" } },
+    { "id": "ai_technology", "name": { "en": "AI & Technology", "es": "IA y Tecnología" } },
+    { "id": "politics", "name": { "en": "Politics", "es": "Política" } },
+    { "id": "economics", "name": { "en": "Economics", "es": "Economía" } },
+    { "id": "leadership", "name": { "en": "Leadership", "es": "Liderazgo" } },
+    { "id": "globalization", "name": { "en": "Globalization", "es": "Globalización" } },
+    { "id": "art", "name": { "en": "Art", "es": "Arte" } },
+    { "id": "bible", "name": { "en": "Bible", "es": "Biblia" } }
+  ],
+  "verbs": [
+    { "id": "slice", "word": { "en": "slice", "es": "cortar" }, "definition": { "en": "to cut something into thin pieces", "es": "dividir algo en trozos finos" } },
+    { "id": "vacuum", "word": { "en": "vacuum", "es": "aspirar" }, "definition": { "en": "to clean using a suction device", "es": "limpiar usando un aparato de succión" } },
+    { "id": "scrub", "word": { "en": "scrub", "es": "fregar" }, "definition": { "en": "to clean something hard using a brush or cloth", "es": "limpiar algo con cepillo o trapo" } },
+    { "id": "fold", "word": { "en": "fold", "es": "doblar" }, "definition": { "en": "to bend something like cloth or paper neatly", "es": "plegar algo como ropa o papel de forma ordenada" } },
+    { "id": "unplug", "word": { "en": "unplug", "es": "desenchufar" }, "definition": { "en": "to disconnect from an electrical outlet", "es": "desconectar de una toma eléctrica" } },
+    { "id": "cook", "word": { "en": "cook", "es": "cocinar" }, "definition": { "en": "to prepare food by heating", "es": "preparar comida mediante calor" } },
+    { "id": "mow", "word": { "en": "mow", "es": "cortar el césped" }, "definition": { "en": "to cut grass with a machine", "es": "segar el pasto con una máquina" } },
+    { "id": "repaint", "word": { "en": "repaint", "es": "repintar" }, "definition": { "en": "to paint again", "es": "pintar de nuevo" } },
+    { "id": "fix", "word": { "en": "fix", "es": "arreglar" }, "definition": { "en": "to repair something broken", "es": "reparar algo roto" } },
+    { "id": "declutter", "word": { "en": "declutter", "es": "ordenar" }, "definition": { "en": "to remove unnecessary items", "es": "eliminar cosas innecesarias" } },
+    { "id": "burn", "word": { "en": "burn", "es": "quemar" }, "definition": { "en": "to overcook or damage by heat", "es": "estropear con calor excesivo" } },
+    { "id": "analyze", "word": { "en": "analyze", "es": "analizar" }, "definition": { "en": "to study something systematically", "es": "estudiar algo de forma sistemática" } },
+    { "id": "deploy", "word": { "en": "deploy", "es": "implementar" }, "definition": { "en": "to make a system or service operational", "es": "poner un sistema o servicio en funcionamiento" } },
+    { "id": "mentor", "word": { "en": "mentor", "es": "orientar" }, "definition": { "en": "to guide someone, especially in learning", "es": "guiar a alguien, especialmente en el aprendizaje" } },
+    { "id": "validate", "word": { "en": "validate", "es": "validar" }, "definition": { "en": "to confirm that something is correct or legitimate", "es": "confirmar que algo es correcto o legítimo" } },
+    { "id": "recover", "word": { "en": "recover", "es": "recuperarse" }, "definition": { "en": "to return to a normal state of health or strength", "es": "volver a un estado normal de salud o fuerza" } },
+    { "id": "contribute", "word": { "en": "contribute", "es": "contribuir" }, "definition": { "en": "to take part in a project or community", "es": "participar en un proyecto o comunidad" } },
+    { "id": "submit", "word": { "en": "submit", "es": "enviar" }, "definition": { "en": "to deliver a document formally", "es": "entregar un documento formalmente" } },
+    { "id": "collect", "word": { "en": "collect", "es": "recopilar" }, "definition": { "en": "to gather data or samples", "es": "reunir datos o muestras" } },
+    { "id": "integrate", "word": { "en": "integrate", "es": "integrar" }, "definition": { "en": "to combine or connect systems", "es": "combinar o conectar sistemas" } },
+    { "id": "supervise", "word": { "en": "supervise", "es": "supervisar" }, "definition": { "en": "to direct or monitor an activity", "es": "dirigir o monitorear una actividad" } },
+    { "id": "recycle", "word": { "en": "recycle", "es": "reciclar" }, "definition": { "en": "to process materials to use them again", "es": "procesar materiales para volver a utilizarlos" } },
+    { "id": "protest", "word": { "en": "protest", "es": "protestar" }, "definition": { "en": "to express disagreement publicly", "es": "expresar desacuerdo públicamente" } },
+    { "id": "perform", "word": { "en": "perform", "es": "actuar" }, "definition": { "en": "to present or execute an artistic work", "es": "presentar o ejecutar una obra artística" } },
+    { "id": "innovate", "word": { "en": "innovate", "es": "innovar" }, "definition": { "en": "to introduce new methods or ideas", "es": "introducir nuevos métodos o ideas" } },
+    { "id": "cope", "word": { "en": "cope", "es": "sobrellevar" }, "definition": { "en": "to deal effectively with difficult situations", "es": "afrontar o manejar situaciones difíciles" } },
+    { "id": "negotiate", "word": { "en": "negotiate", "es": "negociar" }, "definition": { "en": "to discuss terms in order to reach an agreement", "es": "discutir términos para llegar a un acuerdo" } },
+    { "id": "enroll", "word": { "en": "enroll", "es": "inscribirse" }, "definition": { "en": "to register officially in a course", "es": "registrarse oficialmente en un curso" } },
+    { "id": "pollute", "word": { "en": "pollute", "es": "contaminar" }, "definition": { "en": "to make air, water, or soil dirty", "es": "ensuciar el aire, el agua o el suelo" } },
+    { "id": "automate", "word": { "en": "automate", "es": "automatizar" }, "definition": { "en": "to make a process operate automatically", "es": "hacer que un proceso funcione automáticamente" } },
+    { "id": "collaborate", "word": { "en": "collaborate", "es": "colaborar" }, "definition": { "en": "to work together toward a goal", "es": "trabajar juntos hacia un objetivo" } },
+    { "id": "prioritize", "word": { "en": "prioritize", "es": "priorizar" }, "definition": { "en": "to give importance to something", "es": "dar prioridad a algo" } },
+    { "id": "discover", "word": { "en": "discover", "es": "descubrir" }, "definition": { "en": "to find something previously unknown", "es": "encontrar algo antes desconocido" } },
+    { "id": "motivate", "word": { "en": "motivate", "es": "motivar" }, "definition": { "en": "to inspire someone to take action", "es": "inspirar a alguien a actuar" } },
+    { "id": "launch", "word": { "en": "launch", "es": "lanzar" }, "definition": { "en": "to start or introduce a new product or service", "es": "iniciar o introducir un nuevo producto o servicio" } },
+    { "id": "protect", "word": { "en": "protect", "es": "proteger" }, "definition": { "en": "to keep something safe from harm", "es": "mantener algo a salvo del daño" } },
+    { "id": "develop", "word": { "en": "develop", "es": "desarrollar" }, "definition": { "en": "to improve or create something over time", "es": "mejorar o crear algo con el tiempo" } },
+    { "id": "expand", "word": { "en": "expand", "es": "expandir" }, "definition": { "en": "to increase in size, range, or importance", "es": "aumentar en tamaño, alcance o importancia" } },
+    { "id": "promote", "word": { "en": "promote", "es": "promover" }, "definition": { "en": "to encourage the growth or acceptance of something", "es": "fomentar el crecimiento o aceptación de algo" } },
+    { "id": "transform", "word": { "en": "transform", "es": "transformar" }, "definition": { "en": "to change something significantly", "es": "cambiar algo de manera significativa" } },
+    { "id": "explore", "word": { "en": "explore", "es": "explorar" }, "definition": { "en": "to travel through an area to learn about it", "es": "recorrer un área para conocerla" } },
+    { "id": "achieve", "word": { "en": "achieve", "es": "lograr" }, "definition": { "en": "to successfully reach a goal", "es": "alcanzar con éxito un objetivo" } },
+    { "id": "research", "word": { "en": "research", "es": "investigar" }, "definition": { "en": "to study a subject in detail to discover new information", "es": "estudiar un tema en detalle para descubrir nueva información" } },
+    { "id": "improve", "word": { "en": "improve", "es": "mejorar" }, "definition": { "en": "to make something better", "es": "hacer algo mejor" } },
+    { "id": "respect", "word": { "en": "respect", "es": "respetar" }, "definition": { "en": "to show regard for someone or something", "es": "mostrar consideración hacia alguien o algo" } },
+    { "id": "clarify", "word": { "en": "clarify", "es": "aclarar" }, "definition": { "en": "to make something clear or easier to understand", "es": "hacer algo más claro o fácil de entender" } },
+    { "id": "emerge", "word": { "en": "emerge", "es": "emerger" }, "definition": { "en": "to become visible or important", "es": "hacerse visible o importante" } },
+    { "id": "comply", "word": { "en": "comply", "es": "cumplir" }, "definition": { "en": "to follow a rule or order", "es": "obedecer una norma u orden" } },
+    { "id": "depend", "word": { "en": "depend", "es": "depender" }, "definition": { "en": "to be influenced by or decided by something", "es": "estar influenciado o determinado por algo" } },
+    { "id": "reduce", "word": { "en": "reduce", "es": "reducir" }, "definition": { "en": "to make something smaller in amount", "es": "hacer algo menor en cantidad" } },
+    { "id": "prevent", "word": { "en": "prevent", "es": "prevenir" }, "definition": { "en": "to stop something from happening", "es": "impedir que algo ocurra" } },
+    { "id": "broadcast", "word": { "en": "broadcast", "es": "transmitir" }, "definition": { "en": "to send information through media", "es": "enviar información por los medios" } },
+    { "id": "award", "word": { "en": "award", "es": "otorgar" }, "definition": { "en": "to give a prize or recognition", "es": "dar un premio o reconocimiento" } },
+    { "id": "install", "word": { "en": "install", "es": "instalar" }, "definition": { "en": "to put a system or program in place", "es": "poner un sistema o programa en funcionamiento" } },
+    { "id": "detect", "word": { "en": "detect", "es": "detectar" }, "definition": { "en": "to discover or identify something", "es": "descubrir o identificar algo" } },
+    { "id": "influence", "word": { "en": "influence", "es": "influir" }, "definition": { "en": "to have an effect on someone or something", "es": "tener un efecto sobre alguien o algo" } },
+    { "id": "implement", "word": { "en": "implement", "es": "implementar" }, "definition": { "en": "to put a plan or policy into effect", "es": "poner en práctica un plan o política" } },
+    { "id": "adopt", "word": { "en": "adopt", "es": "adoptar" }, "definition": { "en": "to start using a new system or idea", "es": "comenzar a usar un nuevo sistema o idea" } },
+    { "id": "investigate", "word": { "en": "investigate", "es": "investigar" }, "definition": { "en": "to study or examine carefully", "es": "estudiar o examinar cuidadosamente" } },
+    { "id": "diversify", "word": { "en": "diversify", "es": "diversificar" }, "definition": { "en": "to expand into different areas", "es": "expandirse a diferentes áreas" } },
+    { "id": "preserve", "word": { "en": "preserve", "es": "preservar" }, "definition": { "en": "to protect something so it is not damaged or lost", "es": "proteger algo para que no se dañe o pierda" } },
+    { "id": "inspire", "word": { "en": "inspire", "es": "inspirar" }, "definition": { "en": "to motivate someone to act with confidence", "es": "motivar a alguien a actuar con confianza" } },
+    { "id": "graduate", "word": { "en": "graduate", "es": "graduarse" }, "definition": { "en": "to complete an academic program", "es": "completar un programa académico" } },
+    { "id": "observe", "word": { "en": "observe", "es": "observar" }, "definition": { "en": "to monitor or watch carefully over time", "es": "vigilar o mirar cuidadosamente a lo largo del tiempo" } },
+    { "id": "prototype", "word": { "en": "prototype", "es": "prototipar" }, "definition": { "en": "to build an initial model", "es": "construir un modelo inicial" } },
+    { "id": "ensure", "word": { "en": "ensure", "es": "garantizar" }, "definition": { "en": "to make certain that something happens", "es": "asegurar que algo suceda" } },
+    { "id": "reform", "word": { "en": "reform", "es": "reformar" }, "definition": { "en": "to make positive changes", "es": "hacer cambios positivos" } },
+    { "id": "exhibit", "word": { "en": "exhibit", "es": "exhibir" }, "definition": { "en": "to show publicly in a gallery or museum", "es": "mostrar públicamente en una galería o museo" } },
+    { "id": "say", "word": { "en": "say", "es": "decir" }, "definition": { "en": "to express something in words", "es": "expresar algo con palabras" } },
+    { "id": "love", "word": { "en": "love", "es": "amar" }, "definition": { "en": "to feel deep affection for someone", "es": "sentir profundo afecto por alguien" } },
+    { "id": "trust", "word": { "en": "trust", "es": "confiar" }, "definition": { "en": "to believe firmly in the reliability of someone", "es": "creer firmemente en la fiabilidad de alguien" } },
+    { "id": "seek", "word": { "en": "seek", "es": "buscar" }, "definition": { "en": "to look for or try to find something", "es": "buscar o intentar encontrar algo" } },
+    { "id": "know", "word": { "en": "know", "es": "conocer" }, "definition": { "en": "to have information or understanding about something", "es": "tener información o comprensión sobre algo" } },
+    { "id": "provide", "word": { "en": "provide", "es": "proveer" }, "definition": { "en": "to supply what is needed", "es": "suministrar lo que se necesita" } },
+    { "id": "write", "word": { "en": "write", "es": "escribir" }, "definition": { "en": "to record words or symbols", "es": "registrar palabras o símbolos" } },
+    { "id": "strengthen", "word": { "en": "strengthen", "es": "fortalecer" }, "definition": { "en": "to make stronger or more powerful", "es": "hacer más fuerte o poderoso" } }
+  ],
+  "sentence_sets": [
+    {
+      "id": "set_001",
+      "mode_id": "simple_present",
+      "category_id": "kitchen",
+      "verb_id": "slice",
+      "examples": {
+        "en": {
+          "affirmative": "She slices fresh tomatoes for every salad.",
+          "negative": "I don't slice bread by hand; I use a cutting machine.",
+          "interrogative": "Do you slice the vegetables before boiling them?"
+        },
+        "es": {
+          "affirmative": "Ella corta tomates frescos para cada ensalada.",
+          "negative": "No corto el pan a mano; uso una máquina.",
+          "interrogative": "¿Cortas las verduras antes de hervirlas?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_002",
+      "mode_id": "present_continuous",
+      "category_id": "living_room",
+      "verb_id": "vacuum",
+      "examples": {
+        "en": {
+          "affirmative": "I'm vacuuming the carpet before our guests arrive.",
+          "negative": "He isn't vacuuming today because the cleaner bag is full.",
+          "interrogative": "Are you vacuuming the sofa too?"
+        },
+        "es": {
+          "affirmative": "Estoy aspirando la alfombra antes de que lleguen los invitados.",
+          "negative": "Él no está aspirando hoy porque la bolsa está llena.",
+          "interrogative": "¿Estás aspirando también el sofá?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_003",
+      "mode_id": "simple_past",
+      "category_id": "bathroom",
+      "verb_id": "scrub",
+      "examples": {
+        "en": {
+          "affirmative": "She scrubbed the tiles until they shone again.",
+          "negative": "He didn't scrub the bathtub properly.",
+          "interrogative": "Did you scrub the sink after using bleach?"
+        },
+        "es": {
+          "affirmative": "Ella fregó los azulejos hasta que brillaron.",
+          "negative": "Él no fregó bien la bañera.",
+          "interrogative": "¿Fregaste el lavabo después de usar lejía?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_004",
+      "mode_id": "past_continuous",
+      "category_id": "bedroom",
+      "verb_id": "fold",
+      "examples": {
+        "en": {
+          "affirmative": "I was folding the laundry when the lights went out.",
+          "negative": "They weren't folding the sheets yet.",
+          "interrogative": "Were you folding the towels last night?"
+        },
+        "es": {
+          "affirmative": "Estaba doblando la ropa cuando se fue la luz.",
+          "negative": "No estaban doblando las sábanas todavía.",
+          "interrogative": "¿Estabas doblando las toallas anoche?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_005",
+      "mode_id": "present_perfect",
+      "category_id": "garage",
+      "verb_id": "unplug",
+      "examples": {
+        "en": {
+          "affirmative": "I've unplugged the old freezer to save energy.",
+          "negative": "We haven't unplugged the TV yet because of updates.",
+          "interrogative": "Have you unplugged the heater before leaving?"
+        },
+        "es": {
+          "affirmative": "He desenchufado el congelador viejo para ahorrar energía.",
+          "negative": "No hemos desenchufado la tele aún por las actualizaciones.",
+          "interrogative": "¿Has desenchufado el calentador antes de salir?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_006",
+      "mode_id": "present_perfect_continuous",
+      "category_id": "kitchen",
+      "verb_id": "cook",
+      "examples": {
+        "en": {
+          "affirmative": "They've been cooking homemade pasta all afternoon.",
+          "negative": "I haven't been cooking much since we bought the air fryer.",
+          "interrogative": "Have you been cooking with olive oil lately?"
+        },
+        "es": {
+          "affirmative": "Han estado cocinando pasta casera toda la tarde.",
+          "negative": "No he estado cocinando mucho desde que compramos la freidora de aire.",
+          "interrogative": "¿Has estado cocinando con aceite de oliva últimamente?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_007",
+      "mode_id": "past_perfect",
+      "category_id": "garden",
+      "verb_id": "mow",
+      "examples": {
+        "en": {
+          "affirmative": "He had mowed the lawn before the rain started.",
+          "negative": "We hadn't mowed it for weeks when it got overgrown.",
+          "interrogative": "Had the gardener mowed the backyard earlier?"
+        },
+        "es": {
+          "affirmative": "Él había cortado el césped antes de que empezara a llover.",
+          "negative": "No lo habíamos cortado por semanas cuando se volvió alto.",
+          "interrogative": "¿Había cortado el jardinero el césped antes?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_008",
+      "mode_id": "future_simple",
+      "category_id": "home_office",
+      "verb_id": "repaint",
+      "examples": {
+        "en": {
+          "affirmative": "I'll repaint the office walls a lighter color next weekend.",
+          "negative": "We won't repaint the ceiling until next month.",
+          "interrogative": "Will you repaint the shelves to match the desk?"
+        },
+        "es": {
+          "affirmative": "Repintaré las paredes de la oficina el próximo fin de semana.",
+          "negative": "No repintaremos el techo hasta el mes que viene.",
+          "interrogative": "¿Repintarás las estanterías para que combinen con el escritorio?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_009",
+      "mode_id": "first_conditional",
+      "category_id": "garage",
+      "verb_id": "fix",
+      "examples": {
+        "en": {
+          "affirmative": "If the drill stops working, I'll fix it immediately.",
+          "negative": "If it's too old, I won't fix it again.",
+          "interrogative": "Will you fix the car if it makes that noise again?"
+        },
+        "es": {
+          "affirmative": "Si el taladro deja de funcionar, lo arreglaré enseguida.",
+          "negative": "Si está muy viejo, no lo arreglaré de nuevo.",
+          "interrogative": "¿Arreglarás el coche si vuelve a hacer ese ruido?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_010",
+      "mode_id": "second_conditional",
+      "category_id": "living_room",
+      "verb_id": "declutter",
+      "examples": {
+        "en": {
+          "affirmative": "If I had more time, I would declutter the living room completely.",
+          "negative": "I wouldn't declutter it without help.",
+          "interrogative": "Would you declutter the shelves or the drawers first?"
+        },
+        "es": {
+          "affirmative": "Si tuviera más tiempo, ordenaría completamente la sala.",
+          "negative": "No la ordenaría sin ayuda.",
+          "interrogative": "¿Ordenarías primero los estantes o los cajones?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_011",
+      "mode_id": "third_conditional",
+      "category_id": "kitchen",
+      "verb_id": "burn",
+      "examples": {
+        "en": {
+          "affirmative": "If I had lowered the flame, the soup wouldn't have burned.",
+          "negative": "If she hadn't left the pan unattended, nothing would have burned.",
+          "interrogative": "Would dinner have burned if we'd used the timer?"
+        },
+        "es": {
+          "affirmative": "Si hubiera bajado el fuego, la sopa no se habría quemado.",
+          "negative": "Si no hubiera dejado la sartén sola, nada se habría quemado.",
+          "interrogative": "¿Se habría quemado la cena si hubiéramos usado el temporizador?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_012",
+      "mode_id": "simple_present",
+      "category_id": "research",
+      "verb_id": "analyze",
+      "examples": {
+        "en": {
+          "affirmative": "Researchers analyze blockchain repositories to identify developer trends.",
+          "negative": "Some scholars don't analyze empirical data deeply enough.",
+          "interrogative": "Do you analyze the dataset before publishing your paper?"
+        },
+        "es": {
+          "affirmative": "Los investigadores analizan los repositorios de blockchain para identificar tendencias.",
+          "negative": "Algunos académicos no analizan los datos empíricos con suficiente profundidad.",
+          "interrogative": "¿Analizas el conjunto de datos antes de publicar tu artículo?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_013",
+      "mode_id": "present_continuous",
+      "category_id": "technology",
+      "verb_id": "deploy",
+      "examples": {
+        "en": {
+          "affirmative": "The team is deploying a new smart contract on the test network.",
+          "negative": "They aren't deploying the update until the audit finishes.",
+          "interrogative": "Are you deploying the DApp this week?"
+        },
+        "es": {
+          "affirmative": "El equipo está implementando un nuevo contrato inteligente en la red de pruebas.",
+          "negative": "No están implementando la actualización hasta que termine la auditoría.",
+          "interrogative": "¿Estás implementando la DApp esta semana?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_014",
+      "mode_id": "simple_past",
+      "category_id": "education",
+      "verb_id": "mentor",
+      "examples": {
+        "en": {
+          "affirmative": "She mentored many students who later became software engineers.",
+          "negative": "He didn't mentor anyone during the pandemic.",
+          "interrogative": "Did your professor mentor you during your thesis?"
+        },
+        "es": {
+          "affirmative": "Ella orientó a muchos estudiantes que luego se convirtieron en ingenieros de software.",
+          "negative": "Él no orientó a nadie durante la pandemia.",
+          "interrogative": "¿Tu profesor te orientó durante tu tesis?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_015",
+      "mode_id": "past_continuous",
+      "category_id": "blockchain",
+      "verb_id": "validate",
+      "examples": {
+        "en": {
+          "affirmative": "The node was validating transactions when the system crashed.",
+          "negative": "The miners weren't validating that block yet.",
+          "interrogative": "Were you validating smart contracts at that time?"
+        },
+        "es": {
+          "affirmative": "El nodo estaba validando transacciones cuando el sistema se bloqueó.",
+          "negative": "Los mineros aún no estaban validando ese bloque.",
+          "interrogative": "¿Estabas validando contratos inteligentes en ese momento?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_016",
+      "mode_id": "present_perfect",
+      "category_id": "health",
+      "verb_id": "recover",
+      "examples": {
+        "en": {
+          "affirmative": "He has recovered fully after the surgery.",
+          "negative": "She hasn't recovered from the flu yet.",
+          "interrogative": "Have you recovered from the side effects of the vaccine?"
+        },
+        "es": {
+          "affirmative": "Se ha recuperado completamente después de la cirugía.",
+          "negative": "Ella no se ha recuperado de la gripe todavía.",
+          "interrogative": "¿Te has recuperado de los efectos secundarios de la vacuna?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_017",
+      "mode_id": "present_perfect_continuous",
+      "category_id": "software_dev",
+      "verb_id": "contribute",
+      "examples": {
+        "en": {
+          "affirmative": "Developers have been contributing to open-source blockchain tools for years.",
+          "negative": "We haven't been contributing much to that repository recently.",
+          "interrogative": "Have you been contributing to Web3 research papers?"
+        },
+        "es": {
+          "affirmative": "Los desarrolladores han estado contribuyendo a herramientas blockchain de código abierto durante años.",
+          "negative": "No hemos estado contribuyendo mucho a ese repositorio últimamente.",
+          "interrogative": "¿Has estado contribuyendo a artículos de investigación sobre Web3?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_018",
+      "mode_id": "past_perfect",
+      "category_id": "academic_writing",
+      "verb_id": "submit",
+      "examples": {
+        "en": {
+          "affirmative": "She had submitted her paper before the deadline closed.",
+          "negative": "They hadn't submitted the ethics form on time.",
+          "interrogative": "Had the committee submitted their feedback earlier?"
+        },
+        "es": {
+          "affirmative": "Ella había enviado su artículo antes de que cerrara el plazo.",
+          "negative": "No habían enviado el formulario ético a tiempo.",
+          "interrogative": "¿El comité había enviado sus comentarios antes?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_019",
+      "mode_id": "past_perfect_continuous",
+      "category_id": "research",
+      "verb_id": "collect",
+      "examples": {
+        "en": {
+          "affirmative": "They had been collecting survey responses for months before the workshop.",
+          "negative": "We hadn't been collecting enough metadata before the update.",
+          "interrogative": "Had you been collecting qualitative data as well?"
+        },
+        "es": {
+          "affirmative": "Habían estado recopilando respuestas de encuestas durante meses antes del taller.",
+          "negative": "No habíamos estado recopilando suficientes metadatos antes de la actualización.",
+          "interrogative": "¿Habías estado recopilando también datos cualitativos?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_020",
+      "mode_id": "future_simple",
+      "category_id": "blockchain",
+      "verb_id": "integrate",
+      "examples": {
+        "en": {
+          "affirmative": "We'll integrate the identity module into the decentralized registry.",
+          "negative": "They won't integrate legacy APIs with blockchain layers.",
+          "interrogative": "Will you integrate a multi-chain bridge next quarter?"
+        },
+        "es": {
+          "affirmative": "Integraremos el módulo de identidad en el registro descentralizado.",
+          "negative": "No integrarán las API heredadas con las capas blockchain.",
+          "interrogative": "¿Integrarás un puente multicanal el próximo trimestre?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_021",
+      "mode_id": "future_continuous",
+      "category_id": "education",
+      "verb_id": "supervise",
+      "examples": {
+        "en": {
+          "affirmative": "At 10 a.m., the professor will be supervising final presentations.",
+          "negative": "The tutor won't be supervising individual work next week.",
+          "interrogative": "Will you be supervising the research group during the conference?"
+        },
+        "es": {
+          "affirmative": "A las 10 a. m., el profesor estará supervisando las presentaciones finales.",
+          "negative": "El tutor no estará supervisando el trabajo individual la próxima semana.",
+          "interrogative": "¿Estarás supervisando al grupo de investigación durante la conferencia?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_022",
+      "mode_id": "simple_present",
+      "category_id": "environment",
+      "verb_id": "recycle",
+      "examples": {
+        "en": {
+          "affirmative": "Cities recycle thousands of tons of plastic every year.",
+          "negative": "Many households don't recycle electronic waste properly.",
+          "interrogative": "Do you recycle glass bottles at home?"
+        },
+        "es": {
+          "affirmative": "Las ciudades reciclan miles de toneladas de plástico cada año.",
+          "negative": "Muchos hogares no reciclan adecuadamente los desechos electrónicos.",
+          "interrogative": "¿Reciclas botellas de vidrio en casa?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_023",
+      "mode_id": "present_continuous",
+      "category_id": "society",
+      "verb_id": "protest",
+      "examples": {
+        "en": {
+          "affirmative": "Citizens are protesting against unfair data policies.",
+          "negative": "The media isn't covering the demonstrations objectively.",
+          "interrogative": "Are people protesting in front of the city hall?"
+        },
+        "es": {
+          "affirmative": "Los ciudadanos están protestando contra políticas de datos injustas.",
+          "negative": "Los medios no están cubriendo las manifestaciones objetivamente.",
+          "interrogative": "¿Están protestando frente al ayuntamiento?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_024",
+      "mode_id": "simple_past",
+      "category_id": "culture",
+      "verb_id": "perform",
+      "examples": {
+        "en": {
+          "affirmative": "The orchestra performed beautifully during the festival.",
+          "negative": "The dancers didn't perform due to the rain.",
+          "interrogative": "Did the artist perform live last night?"
+        },
+        "es": {
+          "affirmative": "La orquesta actuó maravillosamente durante el festival.",
+          "negative": "Los bailarines no actuaron debido a la lluvia.",
+          "interrogative": "¿Actuó el artista en vivo anoche?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_025",
+      "mode_id": "past_continuous",
+      "category_id": "technology",
+      "verb_id": "innovate",
+      "examples": {
+        "en": {
+          "affirmative": "The company was innovating rapidly before the market crash.",
+          "negative": "They weren't innovating enough to stay competitive.",
+          "interrogative": "Were you innovating in product design or software?"
+        },
+        "es": {
+          "affirmative": "La empresa estaba innovando rápidamente antes del colapso del mercado.",
+          "negative": "No estaban innovando lo suficiente para mantenerse competitivos.",
+          "interrogative": "¿Estabas innovando en diseño de producto o software?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_026",
+      "mode_id": "present_perfect",
+      "category_id": "health",
+      "verb_id": "cope",
+      "examples": {
+        "en": {
+          "affirmative": "She has coped remarkably well with stress this semester.",
+          "negative": "They haven't coped well with remote work isolation.",
+          "interrogative": "Have you coped with anxiety using mindfulness?"
+        },
+        "es": {
+          "affirmative": "Ella ha sobrellevado el estrés de este semestre de forma notable.",
+          "negative": "No han sobrellevado bien el aislamiento del trabajo remoto.",
+          "interrogative": "¿Has sobrellevado la ansiedad con atención plena (mindfulness)?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_027",
+      "mode_id": "present_perfect_continuous",
+      "category_id": "business",
+      "verb_id": "negotiate",
+      "examples": {
+        "en": {
+          "affirmative": "They've been negotiating new contracts since January.",
+          "negative": "We haven't been negotiating with external investors lately.",
+          "interrogative": "Have you been negotiating better rates for startups?"
+        },
+        "es": {
+          "affirmative": "Han estado negociando nuevos contratos desde enero.",
+          "negative": "No hemos estado negociando con inversores externos últimamente.",
+          "interrogative": "¿Has estado negociando mejores tarifas para startups?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_028",
+      "mode_id": "past_perfect",
+      "category_id": "education",
+      "verb_id": "enroll",
+      "examples": {
+        "en": {
+          "affirmative": "She had enrolled in the master's program before receiving the scholarship.",
+          "negative": "They hadn't enrolled in any online course by that time.",
+          "interrogative": "Had you enrolled in university before moving abroad?"
+        },
+        "es": {
+          "affirmative": "Ella se había inscrito en el programa de maestría antes de recibir la beca.",
+          "negative": "No se habían inscrito en ningún curso en línea en ese momento.",
+          "interrogative": "¿Te habías inscrito en la universidad antes de mudarte al extranjero?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_029",
+      "mode_id": "past_perfect_continuous",
+      "category_id": "environment",
+      "verb_id": "pollute",
+      "examples": {
+        "en": {
+          "affirmative": "Factories had been polluting the river long before new laws were passed.",
+          "negative": "The city hadn't been polluting as much after 2015.",
+          "interrogative": "Had the company been polluting even after the inspection?"
+        },
+        "es": {
+          "affirmative": "Las fábricas habían estado contaminando el río mucho antes de que se aprobaran las nuevas leyes.",
+          "negative": "La ciudad no había estado contaminando tanto después de 2015.",
+          "interrogative": "¿La empresa había estado contaminando incluso después de la inspección?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_030",
+      "mode_id": "future_simple",
+      "category_id": "innovation",
+      "verb_id": "automate",
+      "examples": {
+        "en": {
+          "affirmative": "AI will automate many repetitive blockchain transactions.",
+          "negative": "Human creativity won't be automated anytime soon.",
+          "interrogative": "Will quantum computing automate encryption audits?"
+        },
+        "es": {
+          "affirmative": "La inteligencia artificial automatizará muchas transacciones repetitivas de blockchain.",
+          "negative": "La creatividad humana no será automatizada pronto.",
+          "interrogative": "¿La computación cuántica automatizará las auditorías de cifrado?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_031",
+      "mode_id": "first_conditional",
+      "category_id": "workplace",
+      "verb_id": "collaborate",
+      "examples": {
+        "en": {
+          "affirmative": "If the departments collaborate effectively, the project will succeed.",
+          "negative": "If they don't collaborate, deadlines won't be met.",
+          "interrogative": "Will you collaborate with the AI ethics team on this paper?"
+        },
+        "es": {
+          "affirmative": "Si los departamentos colaboran eficazmente, el proyecto tendrá éxito.",
+          "negative": "Si no colaboran, no se cumplirán los plazos.",
+          "interrogative": "¿Colaborarás con el equipo de ética de IA en este artículo?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_032",
+      "mode_id": "second_conditional",
+      "category_id": "health",
+      "verb_id": "prioritize",
+      "examples": {
+        "en": {
+          "affirmative": "If people valued balance more, they would prioritize mental health at work.",
+          "negative": "I wouldn't prioritize profit over sustainability.",
+          "interrogative": "Would governments prioritize education if budgets were higher?"
+        },
+        "es": {
+          "affirmative": "Si la gente valorara más el equilibrio, priorizaría la salud mental en el trabajo.",
+          "negative": "No priorizaría la ganancia sobre la sostenibilidad.",
+          "interrogative": "¿Priorizarían los gobiernos la educación si los presupuestos fueran mayores?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_033",
+      "mode_id": "third_conditional",
+      "category_id": "science",
+      "verb_id": "discover",
+      "examples": {
+        "en": {
+          "affirmative": "If the team had shared data earlier, they would have discovered the pattern sooner.",
+          "negative": "If scientists hadn't collaborated globally, the vaccine wouldn't have been discovered so fast.",
+          "interrogative": "Would researchers have discovered the bug if tests had been automated?"
+        },
+        "es": {
+          "affirmative": "Si el equipo hubiera compartido los datos antes, habrían descubierto el patrón antes.",
+          "negative": "Si los científicos no hubieran colaborado globalmente, la vacuna no se habría descubierto tan rápido.",
+          "interrogative": "¿Habrían descubierto los investigadores el error si las pruebas se hubieran automatizado?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_034",
+      "mode_id": "simple_present",
+      "category_id": "education",
+      "verb_id": "motivate",
+      "examples": {
+        "en": {
+          "affirmative": "Good teachers motivate students to achieve their goals.",
+          "negative": "Some schools don't motivate learners effectively.",
+          "interrogative": "Do teachers motivate students through feedback?"
+        },
+        "es": {
+          "affirmative": "Los buenos maestros motivan a los estudiantes a alcanzar sus metas.",
+          "negative": "Algunas escuelas no motivan a los alumnos de manera efectiva.",
+          "interrogative": "¿Motivan los profesores a los estudiantes mediante retroalimentación?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_035",
+      "mode_id": "present_continuous",
+      "category_id": "health",
+      "verb_id": "recover",
+      "examples": {
+        "en": {
+          "affirmative": "The patient is recovering faster than expected.",
+          "negative": "She isn't recovering as well as the doctors hoped.",
+          "interrogative": "Is she recovering after the surgery?"
+        },
+        "es": {
+          "affirmative": "El paciente se está recuperando más rápido de lo esperado.",
+          "negative": "Ella no se está recuperando tan bien como esperaban los médicos.",
+          "interrogative": "¿Se está recuperando después de la cirugía?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_036",
+      "mode_id": "simple_past",
+      "category_id": "technology",
+      "verb_id": "launch",
+      "examples": {
+        "en": {
+          "affirmative": "The company launched its first AI-powered device last year.",
+          "negative": "They didn't launch the update on time.",
+          "interrogative": "Did they launch the new app successfully?"
+        },
+        "es": {
+          "affirmative": "La empresa lanzó su primer dispositivo con IA el año pasado.",
+          "negative": "No lanzaron la actualización a tiempo.",
+          "interrogative": "¿Lanzaron la nueva aplicación con éxito?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_037",
+      "mode_id": "past_continuous",
+      "category_id": "environment",
+      "verb_id": "protect",
+      "examples": {
+        "en": {
+          "affirmative": "Scientists were protecting endangered species when the storm began.",
+          "negative": "They weren't protecting the forest at that moment.",
+          "interrogative": "Were they protecting the coral reefs?"
+        },
+        "es": {
+          "affirmative": "Los científicos estaban protegiendo especies en peligro cuando comenzó la tormenta.",
+          "negative": "No estaban protegiendo el bosque en ese momento.",
+          "interrogative": "¿Estaban protegiendo los arrecifes de coral?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_038",
+      "mode_id": "present_perfect",
+      "category_id": "science",
+      "verb_id": "discover",
+      "examples": {
+        "en": {
+          "affirmative": "Researchers have discovered a new treatment for the disease.",
+          "negative": "Scientists haven't discovered a cure yet.",
+          "interrogative": "Have they discovered the cause of the infection?"
+        },
+        "es": {
+          "affirmative": "Los investigadores han descubierto un nuevo tratamiento para la enfermedad.",
+          "negative": "Los científicos aún no han descubierto una cura.",
+          "interrogative": "¿Han descubierto la causa de la infección?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_039",
+      "mode_id": "present_perfect_continuous",
+      "category_id": "work",
+      "verb_id": "develop",
+      "examples": {
+        "en": {
+          "affirmative": "The engineers have been developing the new platform for months.",
+          "negative": "They haven't been developing it efficiently.",
+          "interrogative": "Have they been developing the system since January?"
+        },
+        "es": {
+          "affirmative": "Los ingenieros han estado desarrollando la nueva plataforma durante meses.",
+          "negative": "No la han estado desarrollando de manera eficiente.",
+          "interrogative": "¿Han estado desarrollando el sistema desde enero?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_040",
+      "mode_id": "past_perfect",
+      "category_id": "business",
+      "verb_id": "expand",
+      "examples": {
+        "en": {
+          "affirmative": "The company had expanded into Asia before the pandemic hit.",
+          "negative": "It hadn't expanded its services in Europe.",
+          "interrogative": "Had the company expanded its network by 2019?"
+        },
+        "es": {
+          "affirmative": "La empresa se había expandido a Asia antes de que llegara la pandemia.",
+          "negative": "No había expandido sus servicios en Europa.",
+          "interrogative": "¿La empresa había expandido su red para 2019?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_041",
+      "mode_id": "past_perfect_continuous",
+      "category_id": "culture",
+      "verb_id": "promote",
+      "examples": {
+        "en": {
+          "affirmative": "The organization had been promoting local art for years before gaining recognition.",
+          "negative": "It hadn't been promoting cultural diversity.",
+          "interrogative": "Had they been promoting indigenous music before the event?"
+        },
+        "es": {
+          "affirmative": "La organización había estado promoviendo el arte local durante años antes de ganar reconocimiento.",
+          "negative": "No había estado promoviendo la diversidad cultural.",
+          "interrogative": "¿Habían estado promoviendo la música indígena antes del evento?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_042",
+      "mode_id": "future_simple",
+      "category_id": "technology",
+      "verb_id": "transform",
+      "examples": {
+        "en": {
+          "affirmative": "Artificial intelligence will transform the way we work.",
+          "negative": "It won't transform education overnight.",
+          "interrogative": "Will AI transform creative industries?"
+        },
+        "es": {
+          "affirmative": "La inteligencia artificial transformará la forma en que trabajamos.",
+          "negative": "No transformará la educación de la noche a la mañana.",
+          "interrogative": "¿La IA transformará las industrias creativas?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_043",
+      "mode_id": "future_continuous",
+      "category_id": "travel",
+      "verb_id": "explore",
+      "examples": {
+        "en": {
+          "affirmative": "Next year, we'll be exploring the northern regions of Canada.",
+          "negative": "We won't be exploring the desert this season.",
+          "interrogative": "Will you be exploring new destinations soon?"
+        },
+        "es": {
+          "affirmative": "El próximo año estaremos explorando las regiones del norte de Canadá.",
+          "negative": "No estaremos explorando el desierto esta temporada.",
+          "interrogative": "¿Estarás explorando nuevos destinos pronto?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_044",
+      "mode_id": "future_perfect",
+      "category_id": "career",
+      "verb_id": "achieve",
+      "examples": {
+        "en": {
+          "affirmative": "By 2030, she will have achieved all her professional ambitions.",
+          "negative": "She won't have achieved full independence by then.",
+          "interrogative": "Will she have achieved her dreams by that time?"
+        },
+        "es": {
+          "affirmative": "Para 2030, habrá logrado todas sus ambiciones profesionales.",
+          "negative": "No habrá alcanzado la independencia total para entonces.",
+          "interrogative": "¿Habrá alcanzado sus sueños para ese momento?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_045",
+      "mode_id": "future_perfect_continuous",
+      "category_id": "environment",
+      "verb_id": "research",
+      "examples": {
+        "en": {
+          "affirmative": "By next year, they will have been researching climate change for a decade.",
+          "negative": "They won't have been researching it continuously.",
+          "interrogative": "Will they have been researching coastal erosion?"
+        },
+        "es": {
+          "affirmative": "Para el próximo año, habrán estado investigando el cambio climático durante una década.",
+          "negative": "No habrán estado investigándolo de forma continua.",
+          "interrogative": "¿Habrán estado investigando la erosión costera?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_046",
+      "mode_id": "modal_can",
+      "category_id": "science",
+      "verb_id": "analyze",
+      "examples": {
+        "en": {
+          "affirmative": "Scientists can analyze genetic data in real time.",
+          "negative": "They can't analyze results without accurate samples.",
+          "interrogative": "Can we analyze the behavior of the new compound?"
+        },
+        "es": {
+          "affirmative": "Los científicos pueden analizar datos genéticos en tiempo real.",
+          "negative": "No pueden analizar los resultados sin muestras precisas.",
+          "interrogative": "¿Podemos analizar el comportamiento del nuevo compuesto?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_047",
+      "mode_id": "modal_could",
+      "category_id": "society",
+      "verb_id": "improve",
+      "examples": {
+        "en": {
+          "affirmative": "The government could improve access to public education.",
+          "negative": "It couldn't improve conditions without funding.",
+          "interrogative": "Could citizens improve their communities through volunteering?"
+        },
+        "es": {
+          "affirmative": "El gobierno podría mejorar el acceso a la educación pública.",
+          "negative": "No pudo mejorar las condiciones sin financiamiento.",
+          "interrogative": "¿Podrían los ciudadanos mejorar sus comunidades mediante el voluntariado?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_048",
+      "mode_id": "modal_should",
+      "category_id": "ethics",
+      "verb_id": "respect",
+      "examples": {
+        "en": {
+          "affirmative": "Companies should respect human rights in all operations.",
+          "negative": "They shouldn't disrespect local cultures.",
+          "interrogative": "Should organizations respect user privacy more?"
+        },
+        "es": {
+          "affirmative": "Las empresas deberían respetar los derechos humanos en todas sus operaciones.",
+          "negative": "No deberían faltar al respeto a las culturas locales.",
+          "interrogative": "¿Deberían las organizaciones respetar más la privacidad del usuario?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_049",
+      "mode_id": "modal_would",
+      "category_id": "communication",
+      "verb_id": "clarify",
+      "examples": {
+        "en": {
+          "affirmative": "I would clarify the instructions if they were confusing.",
+          "negative": "I wouldn't clarify unless asked.",
+          "interrogative": "Would you clarify the project goals?"
+        },
+        "es": {
+          "affirmative": "Aclararía las instrucciones si fueran confusas.",
+          "negative": "No aclararía a menos que me lo pidieran.",
+          "interrogative": "¿Aclararías los objetivos del proyecto?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_050",
+      "mode_id": "modal_might",
+      "category_id": "innovation",
+      "verb_id": "emerge",
+      "examples": {
+        "en": {
+          "affirmative": "New trends might emerge from startup ecosystems.",
+          "negative": "They might not emerge in traditional industries.",
+          "interrogative": "Might new ideas emerge from collaboration?"
+        },
+        "es": {
+          "affirmative": "Nuevas tendencias podrían emerger de los ecosistemas de startups.",
+          "negative": "Podrían no surgir en industrias tradicionales.",
+          "interrogative": "¿Podrían surgir nuevas ideas de la colaboración?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_051",
+      "mode_id": "modal_must",
+      "category_id": "law",
+      "verb_id": "comply",
+      "examples": {
+        "en": {
+          "affirmative": "All firms must comply with international regulations.",
+          "negative": "They mustn't ignore safety laws.",
+          "interrogative": "Must companies comply with GDPR?"
+        },
+        "es": {
+          "affirmative": "Todas las empresas deben cumplir con las regulaciones internacionales.",
+          "negative": "No deben ignorar las leyes de seguridad.",
+          "interrogative": "¿Deben las empresas cumplir con el RGPD?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_052",
+      "mode_id": "zero_conditional",
+      "category_id": "health",
+      "verb_id": "depend",
+      "examples": {
+        "en": {
+          "affirmative": "If you sleep well, your health depends on good habits.",
+          "negative": "If you don't exercise, your health doesn't depend on age alone.",
+          "interrogative": "Does well-being depend on regular rest?"
+        },
+        "es": {
+          "affirmative": "Si duermes bien, tu salud depende de buenos hábitos.",
+          "negative": "Si no haces ejercicio, tu salud no depende solo de la edad.",
+          "interrogative": "¿Depende el bienestar del descanso regular?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_053",
+      "mode_id": "first_conditional",
+      "category_id": "environment",
+      "verb_id": "reduce",
+      "examples": {
+        "en": {
+          "affirmative": "If we recycle more, pollution will reduce significantly.",
+          "negative": "If we ignore sustainability, emissions won't reduce.",
+          "interrogative": "Will waste reduce if we ban plastic bags?"
+        },
+        "es": {
+          "affirmative": "Si reciclamos más, la contaminación se reducirá significativamente.",
+          "negative": "Si ignoramos la sostenibilidad, las emisiones no disminuirán.",
+          "interrogative": "¿Se reducirá la basura si prohibimos las bolsas de plástico?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_054",
+      "mode_id": "second_conditional",
+      "category_id": "technology",
+      "verb_id": "innovate",
+      "examples": {
+        "en": {
+          "affirmative": "If developers had more support, they would innovate faster.",
+          "negative": "If they didn't have funding, they wouldn't innovate at all.",
+          "interrogative": "Would companies innovate if risks were lower?"
+        },
+        "es": {
+          "affirmative": "Si los desarrolladores tuvieran más apoyo, innovarían más rápido.",
+          "negative": "Si no tuvieran financiamiento, no innovarían en absoluto.",
+          "interrogative": "¿Innovarían las empresas si los riesgos fueran menores?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_055",
+      "mode_id": "third_conditional",
+      "category_id": "history",
+      "verb_id": "prevent",
+      "examples": {
+        "en": {
+          "affirmative": "If the system had been updated, the blackout would have been prevented.",
+          "negative": "If they hadn't ignored warnings, they wouldn't have faced losses.",
+          "interrogative": "Would the disaster have been prevented with better planning?"
+        },
+        "es": {
+          "affirmative": "Si el sistema se hubiera actualizado, el apagón se habría evitado.",
+          "negative": "Si no hubieran ignorado las advertencias, no habrían sufrido pérdidas.",
+          "interrogative": "¿Se habría evitado el desastre con una mejor planificación?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_056",
+      "mode_id": "passive_present_simple",
+      "category_id": "media",
+      "verb_id": "broadcast",
+      "examples": {
+        "en": {
+          "affirmative": "The news is broadcast globally every morning.",
+          "negative": "It isn't broadcast on local channels anymore.",
+          "interrogative": "Is the program broadcast live?"
+        },
+        "es": {
+          "affirmative": "Las noticias se transmiten globalmente cada mañana.",
+          "negative": "Ya no se transmite en canales locales.",
+          "interrogative": "¿Se transmite el programa en vivo?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_057",
+      "mode_id": "passive_past_simple",
+      "category_id": "education",
+      "verb_id": "award",
+      "examples": {
+        "en": {
+          "affirmative": "The student was awarded for outstanding performance.",
+          "negative": "The prize wasn't awarded fairly.",
+          "interrogative": "Was the scholarship awarded to her?"
+        },
+        "es": {
+          "affirmative": "El estudiante fue premiado por su rendimiento sobresaliente.",
+          "negative": "El premio no fue otorgado de manera justa.",
+          "interrogative": "¿Se le otorgó la beca a ella?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_058",
+      "mode_id": "passive_present_perfect",
+      "category_id": "technology",
+      "verb_id": "install",
+      "examples": {
+        "en": {
+          "affirmative": "The software has been installed successfully.",
+          "negative": "It hasn't been installed on all devices.",
+          "interrogative": "Has the system been installed correctly?"
+        },
+        "es": {
+          "affirmative": "El software ha sido instalado con éxito.",
+          "negative": "No se ha instalado en todos los dispositivos.",
+          "interrogative": "¿Se ha instalado correctamente el sistema?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_059",
+      "mode_id": "passive_modal",
+      "category_id": "security",
+      "verb_id": "detect",
+      "examples": {
+        "en": {
+          "affirmative": "The threat could be detected before spreading.",
+          "negative": "It couldn't be detected without sensors.",
+          "interrogative": "Could the malware be detected automatically?"
+        },
+        "es": {
+          "affirmative": "La amenaza podría ser detectada antes de propagarse.",
+          "negative": "No pudo ser detectada sin sensores.",
+          "interrogative": "¿Podría detectarse el malware automáticamente?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_060",
+      "mode_id": "simple_present",
+      "category_id": "psychology",
+      "verb_id": "influence",
+      "examples": {
+        "en": {
+          "affirmative": "Emotions influence how people make decisions.",
+          "negative": "Stress doesn't influence everyone in the same way.",
+          "interrogative": "Do social factors influence behavior?"
+        },
+        "es": {
+          "affirmative": "Las emociones influyen en cómo las personas toman decisiones.",
+          "negative": "El estrés no influye en todos de la misma manera.",
+          "interrogative": "¿Influyen los factores sociales en el comportamiento?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_061",
+      "mode_id": "present_continuous",
+      "category_id": "ai_technology",
+      "verb_id": "automate",
+      "examples": {
+        "en": {
+          "affirmative": "Developers are automating repetitive tasks using AI models.",
+          "negative": "Companies aren't automating ethical reviews yet.",
+          "interrogative": "Are universities automating plagiarism detection?"
+        },
+        "es": {
+          "affirmative": "Los desarrolladores están automatizando tareas repetitivas mediante modelos de IA.",
+          "negative": "Las empresas aún no están automatizando las revisiones éticas.",
+          "interrogative": "¿Están las universidades automatizando la detección de plagio?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_062",
+      "mode_id": "simple_past",
+      "category_id": "politics",
+      "verb_id": "implement",
+      "examples": {
+        "en": {
+          "affirmative": "The government implemented new transparency policies in 2020.",
+          "negative": "They didn't implement reforms despite public pressure.",
+          "interrogative": "Did the parliament implement the new law?"
+        },
+        "es": {
+          "affirmative": "El gobierno implementó nuevas políticas de transparencia en 2020.",
+          "negative": "No implementaron reformas a pesar de la presión pública.",
+          "interrogative": "¿Implementó el parlamento la nueva ley?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_063",
+      "mode_id": "past_continuous",
+      "category_id": "education",
+      "verb_id": "mentor",
+      "examples": {
+        "en": {
+          "affirmative": "Professors were mentoring students when the system crashed.",
+          "negative": "They weren't mentoring all groups equally.",
+          "interrogative": "Were you mentoring new teachers last semester?"
+        },
+        "es": {
+          "affirmative": "Los profesores estaban orientando a los estudiantes cuando el sistema falló.",
+          "negative": "No estaban orientando a todos los grupos por igual.",
+          "interrogative": "¿Estabas orientando a los nuevos profesores el semestre pasado?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_064",
+      "mode_id": "present_perfect",
+      "category_id": "blockchain",
+      "verb_id": "adopt",
+      "examples": {
+        "en": {
+          "affirmative": "Governments have adopted blockchain for secure data management.",
+          "negative": "Some institutions haven't adopted decentralized models yet.",
+          "interrogative": "Have banks adopted tokenization solutions?"
+        },
+        "es": {
+          "affirmative": "Los gobiernos han adoptado blockchain para la gestión segura de datos.",
+          "negative": "Algunas instituciones aún no han adoptado modelos descentralizados.",
+          "interrogative": "¿Han adoptado los bancos soluciones de tokenización?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_065",
+      "mode_id": "present_perfect_continuous",
+      "category_id": "research",
+      "verb_id": "investigate",
+      "examples": {
+        "en": {
+          "affirmative": "Scholars have been investigating the social impact of AI ethics.",
+          "negative": "We haven't been investigating open-source risks deeply.",
+          "interrogative": "Have they been investigating bias in datasets?"
+        },
+        "es": {
+          "affirmative": "Los académicos han estado investigando el impacto social de la ética de la IA.",
+          "negative": "No hemos estado investigando a fondo los riesgos del código abierto.",
+          "interrogative": "¿Han estado investigando el sesgo en los conjuntos de datos?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_066",
+      "mode_id": "past_perfect",
+      "category_id": "economics",
+      "verb_id": "diversify",
+      "examples": {
+        "en": {
+          "affirmative": "The company had diversified its portfolio before the crisis began.",
+          "negative": "They hadn't diversified their sources of income.",
+          "interrogative": "Had startups diversified before regulation tightened?"
+        },
+        "es": {
+          "affirmative": "La empresa había diversificado su cartera antes de que comenzara la crisis.",
+          "negative": "No habían diversificado sus fuentes de ingresos.",
+          "interrogative": "¿Las startups se habían diversificado antes de que se endureciera la regulación?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_067",
+      "mode_id": "past_perfect_continuous",
+      "category_id": "culture",
+      "verb_id": "preserve",
+      "examples": {
+        "en": {
+          "affirmative": "Artists had been preserving traditional crafts before modernization arrived.",
+          "negative": "Museums hadn't been preserving digital archives properly.",
+          "interrogative": "Had curators been preserving indigenous artifacts?"
+        },
+        "es": {
+          "affirmative": "Los artistas habían estado preservando las artesanías tradicionales antes de la modernización.",
+          "negative": "Los museos no habían estado preservando correctamente los archivos digitales.",
+          "interrogative": "¿Habían estado preservando los artefactos indígenas?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_068",
+      "mode_id": "future_simple",
+      "category_id": "leadership",
+      "verb_id": "inspire",
+      "examples": {
+        "en": {
+          "affirmative": "Future leaders will inspire teams through empathy and transparency.",
+          "negative": "They won't inspire trust if they hide information.",
+          "interrogative": "Will new leaders inspire innovation?"
+        },
+        "es": {
+          "affirmative": "Los líderes del futuro inspirarán a los equipos mediante empatía y transparencia.",
+          "negative": "No inspirarán confianza si ocultan información.",
+          "interrogative": "¿Inspirarán los nuevos líderes la innovación?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_069",
+      "mode_id": "future_continuous",
+      "category_id": "globalization",
+      "verb_id": "collaborate",
+      "examples": {
+        "en": {
+          "affirmative": "Next year, international teams will be collaborating on open-data projects.",
+          "negative": "We won't be collaborating with closed-source companies.",
+          "interrogative": "Will you be collaborating with cross-border institutions?"
+        },
+        "es": {
+          "affirmative": "El próximo año, equipos internacionales estarán colaborando en proyectos de datos abiertos.",
+          "negative": "No estaremos colaborando con empresas de código cerrado.",
+          "interrogative": "¿Estarás colaborando con instituciones transfronterizas?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_070",
+      "mode_id": "future_perfect",
+      "category_id": "education",
+      "verb_id": "graduate",
+      "examples": {
+        "en": {
+          "affirmative": "By 2035, millions of students will have graduated through online universities.",
+          "negative": "Many won't have graduated on time due to economic barriers.",
+          "interrogative": "Will they have graduated before job automation peaks?"
+        },
+        "es": {
+          "affirmative": "Para 2035, millones de estudiantes se habrán graduado mediante universidades en línea.",
+          "negative": "Muchos no se habrán graduado a tiempo debido a barreras económicas.",
+          "interrogative": "¿Se habrán graduado antes de que alcance su punto máximo la automatización laboral?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_071",
+      "mode_id": "future_perfect_continuous",
+      "category_id": "science",
+      "verb_id": "observe",
+      "examples": {
+        "en": {
+          "affirmative": "By 2040, astronomers will have been observing exoplanets for nearly fifty years.",
+          "negative": "They won't have been observing with outdated telescopes.",
+          "interrogative": "Will scientists have been observing climate shifts accurately?"
+        },
+        "es": {
+          "affirmative": "Para 2040, los astrónomos habrán estado observando exoplanetas durante casi cincuenta años.",
+          "negative": "No habrán estado observando con telescopios obsoletos.",
+          "interrogative": "¿Habrán estado observando con precisión los cambios climáticos?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_072",
+      "mode_id": "modal_can",
+      "category_id": "innovation",
+      "verb_id": "prototype",
+      "examples": {
+        "en": {
+          "affirmative": "Engineers can prototype blockchain tools rapidly using modular design.",
+          "negative": "They can't prototype without technical documentation.",
+          "interrogative": "Can startups prototype with limited resources?"
+        },
+        "es": {
+          "affirmative": "Los ingenieros pueden prototipar herramientas blockchain rápidamente mediante diseño modular.",
+          "negative": "No pueden prototipar sin documentación técnica.",
+          "interrogative": "¿Pueden las startups prototipar con recursos limitados?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_073",
+      "mode_id": "modal_should",
+      "category_id": "ethics",
+      "verb_id": "ensure",
+      "examples": {
+        "en": {
+          "affirmative": "Governments should ensure transparency in algorithmic decisions.",
+          "negative": "Companies shouldn't ensure profit at the cost of human welfare.",
+          "interrogative": "Should institutions ensure accountability in AI projects?"
+        },
+        "es": {
+          "affirmative": "Los gobiernos deberían garantizar la transparencia en las decisiones algorítmicas.",
+          "negative": "Las empresas no deberían garantizar beneficios a costa del bienestar humano.",
+          "interrogative": "¿Deberían las instituciones garantizar la responsabilidad en los proyectos de IA?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_074",
+      "mode_id": "second_conditional",
+      "category_id": "society",
+      "verb_id": "reform",
+      "examples": {
+        "en": {
+          "affirmative": "If citizens were more engaged, they would reform broken systems.",
+          "negative": "I wouldn't reform laws without consulting experts.",
+          "interrogative": "Would governments reform education if pressure increased?"
+        },
+        "es": {
+          "affirmative": "Si los ciudadanos estuvieran más comprometidos, reformarían los sistemas fallidos.",
+          "negative": "No reformaría las leyes sin consultar a los expertos.",
+          "interrogative": "¿Reformarían los gobiernos la educación si aumentara la presión?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "set_075",
+      "mode_id": "passive_present_simple",
+      "category_id": "art",
+      "verb_id": "exhibit",
+      "examples": {
+        "en": {
+          "affirmative": "Contemporary art is exhibited in major museums worldwide.",
+          "negative": "It isn't exhibited in smaller cultural centers.",
+          "interrogative": "Is modern photography exhibited in that gallery?"
+        },
+        "es": {
+          "affirmative": "El arte contemporáneo se exhibe en los principales museos del mundo.",
+          "negative": "No se exhibe en los centros culturales pequeños.",
+          "interrogative": "¿Se exhibe la fotografía moderna en esa galería?"
+        }
+      },
+      "bible_reference": null
+    },
+    {
+      "id": "bible_set_001",
+      "mode_id": "simple_present",
+      "category_id": "bible",
+      "verb_id": "say",
+      "examples": {
+        "en": {
+          "affirmative": "Jesus says to him, 'I am the way, and the truth, and the life.' (John 14:6 – KJV)",
+          "negative": "He does not say that all paths lead equally to God.",
+          "interrogative": "Does the Lord say that He will never forsake those who trust in Him?"
+        },
+        "es": {
+          "affirmative": "Jesús le dijo: Yo soy el camino, y la verdad, y la vida. (Juan 14:6 – RVR)",
+          "negative": "Él no dice que todos los caminos llevan igualmente a Dios.",
+          "interrogative": "¿Dice el Señor que nunca desamparará a los que confían en Él?"
+        }
+      },
+      "bible_reference": {
+        "book": "John",
+        "chapter": 14,
+        "verse": 6,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_002",
+      "mode_id": "present_perfect",
+      "category_id": "bible",
+      "verb_id": "love",
+      "examples": {
+        "en": {
+          "affirmative": "God has so loved the world that He gave His only begotten Son. (John 3:16 – KJV)",
+          "negative": "He has not loved the world so as to withhold His greatest gift from us.",
+          "interrogative": "Has God ever loved His people with an everlasting love?"
+        },
+        "es": {
+          "affirmative": "Dios ha amado tanto al mundo que ha dado a su Hijo unigénito. (Juan 3:16 – RVR)",
+          "negative": "Él no ha amado al mundo de modo que nos prive de su mayor regalo.",
+          "interrogative": "¿Ha amado Dios a su pueblo con amor eterno?"
+        }
+      },
+      "bible_reference": {
+        "book": "John",
+        "chapter": 3,
+        "verse": 16,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_003",
+      "mode_id": "modal_can",
+      "category_id": "bible",
+      "verb_id": "strengthen",
+      "examples": {
+        "en": {
+          "affirmative": "I can do all things through Christ which strengtheneth me. (Philippians 4:13 – KJV)",
+          "negative": "We cannot do all things through our own strength alone.",
+          "interrogative": "Can a believer truly do all things through Christ who strengthens him?"
+        },
+        "es": {
+          "affirmative": "Todo lo puedo en Cristo que me fortalece. (Filipenses 4:13 – RVR)",
+          "negative": "No podemos hacer todas las cosas solo con nuestra propia fuerza.",
+          "interrogative": "¿Puede un creyente realmente hacer todo en Cristo que le fortalece?"
+        }
+      },
+      "bible_reference": {
+        "book": "Philippians",
+        "chapter": 4,
+        "verse": 13,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_004",
+      "mode_id": "simple_past",
+      "category_id": "bible",
+      "verb_id": "write",
+      "examples": {
+        "en": {
+          "affirmative": "In the beginning God created the heaven and the earth. (Genesis 1:1 – KJV)",
+          "negative": "God did not create the world in confusion, but with purpose and order.",
+          "interrogative": "Did God speak all things into existence in the beginning?"
+        },
+        "es": {
+          "affirmative": "En el principio creó Dios los cielos y la tierra. (Génesis 1:1 – RVR)",
+          "negative": "Dios no creó el mundo en confusión, sino con propósito y orden.",
+          "interrogative": "¿Habló Dios todas las cosas a la existencia en el principio?"
+        }
+      },
+      "bible_reference": {
+        "book": "Genesis",
+        "chapter": 1,
+        "verse": 1,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_005",
+      "mode_id": "first_conditional",
+      "category_id": "bible",
+      "verb_id": "seek",
+      "examples": {
+        "en": {
+          "affirmative": "If you ask, it will be given to you; if you seek, you will find. (Matthew 7:7 – KJV)",
+          "negative": "If you do not seek Him with all your heart, you will not find Him.",
+          "interrogative": "Will you find God if you seek Him with all your heart?"
+        },
+        "es": {
+          "affirmative": "Si pedís, se os dará; si buscáis, hallaréis. (Mateo 7:7 – RVR)",
+          "negative": "Si no lo buscas con todo tu corazón, no lo encontrarás.",
+          "interrogative": "¿Hallarás a Dios si lo buscas con todo tu corazón?"
+        }
+      },
+      "bible_reference": {
+        "book": "Matthew",
+        "chapter": 7,
+        "verse": 7,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_006",
+      "mode_id": "zero_conditional",
+      "category_id": "bible",
+      "verb_id": "know",
+      "examples": {
+        "en": {
+          "affirmative": "If you know the truth, the truth will set you free. (John 8:32 – KJV)",
+          "negative": "If you do not know the truth, you do not walk in freedom.",
+          "interrogative": "Does the truth set you free when you truly know it?"
+        },
+        "es": {
+          "affirmative": "Si conocéis la verdad, la verdad os hará libres. (Juan 8:32 – RVR)",
+          "negative": "Si no conoces la verdad, no caminas en libertad.",
+          "interrogative": "¿Te hace libre la verdad cuando la conoces de verdad?"
+        }
+      },
+      "bible_reference": {
+        "book": "John",
+        "chapter": 8,
+        "verse": 32,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_007",
+      "mode_id": "future_simple",
+      "category_id": "bible",
+      "verb_id": "provide",
+      "examples": {
+        "en": {
+          "affirmative": "My God will supply all your needs according to His riches in glory. (Philippians 4:19 – KJV)",
+          "negative": "He will not leave His people in want when they trust in Him.",
+          "interrogative": "Will God provide everything you need according to His glory?"
+        },
+        "es": {
+          "affirmative": "Mi Dios proveerá todo lo que os falta conforme a sus riquezas en gloria. (Filipenses 4:19 – RVR)",
+          "negative": "Él no dejará a su pueblo en necesidad cuando confían en Él.",
+          "interrogative": "¿Proveerá Dios todo lo que necesitas conforme a su gloria?"
+        }
+      },
+      "bible_reference": {
+        "book": "Philippians",
+        "chapter": 4,
+        "verse": 19,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_008",
+      "mode_id": "modal_should",
+      "category_id": "bible",
+      "verb_id": "trust",
+      "examples": {
+        "en": {
+          "affirmative": "We should trust in the LORD with all our heart and not lean on our own understanding. (Proverbs 3:5 – KJV)",
+          "negative": "We should not trust in our own wisdom above the wisdom of God.",
+          "interrogative": "Should believers trust in the Lord rather than their own understanding?"
+        },
+        "es": {
+          "affirmative": "Debemos confiar en el Señor con todo nuestro corazón y no apoyarnos en nuestra propia prudencia. (Proverbios 3:5 – RVR)",
+          "negative": "No debemos confiar en nuestra propia sabiduría por encima de la sabiduría de Dios.",
+          "interrogative": "¿Deben los creyentes confiar en el Señor en lugar de su propio entendimiento?"
+        }
+      },
+      "bible_reference": {
+        "book": "Proverbs",
+        "chapter": 3,
+        "verse": 5,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_009",
+      "mode_id": "present_perfect_continuous",
+      "category_id": "bible",
+      "verb_id": "seek",
+      "examples": {
+        "en": {
+          "affirmative": "Those who have been waiting on the LORD have been renewing their strength. (Isaiah 40:31 – KJV)",
+          "negative": "They have not been growing weary, for they wait on the Lord.",
+          "interrogative": "Have you been waiting on the LORD to renew your strength?"
+        },
+        "es": {
+          "affirmative": "Los que han estado esperando en el Señor han renovado sus fuerzas. (Isaías 40:31 – RVR)",
+          "negative": "No se han estado cansando, porque esperan en el Señor.",
+          "interrogative": "¿Has estado esperando en el Señor para renovar tus fuerzas?"
+        }
+      },
+      "bible_reference": {
+        "book": "Isaiah",
+        "chapter": 40,
+        "verse": 31,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    },
+    {
+      "id": "bible_set_010",
+      "mode_id": "passive_present_perfect",
+      "category_id": "bible",
+      "verb_id": "write",
+      "examples": {
+        "en": {
+          "affirmative": "Only those whose names have been written in the Lamb's book of life will enter. (Revelation 21:27 – KJV)",
+          "negative": "Nothing impure has been allowed to enter the holy city.",
+          "interrogative": "Has your name been written in the Lamb's book of life?"
+        },
+        "es": {
+          "affirmative": "Solo aquellos cuyos nombres han sido escritos en el libro de la vida del Cordero entrarán. (Apocalipsis 21:27 – RVR)",
+          "negative": "Nada impuro ha sido permitido entrar en la ciudad santa.",
+          "interrogative": "¿Ha sido escrito tu nombre en el libro de la vida del Cordero?"
+        }
+      },
+      "bible_reference": {
+        "book": "Revelation",
+        "chapter": 21,
+        "verse": 27,
+        "version_en": "KJV",
+        "version_es": "RVR"
+      }
+    }
+  ]
+}

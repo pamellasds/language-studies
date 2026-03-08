@@ -67,6 +67,9 @@ export function AppProvider({ children }) {
       .catch(() => {});
   }, []);
 
+  // ── Language ──────────────────────────────────────────────────────────
+  const language = currentUser?.language || 'en';
+
   // ── Debounced sync to MongoDB ─────────────────────────────────────────
   const syncProgress = useCallback((newProgress) => {
     if (!currentUser) return;
@@ -105,9 +108,6 @@ export function AppProvider({ children }) {
     setCurrentUser(null);
     setProgress(BLANK_PROGRESS);
   }
-
-  // ── Language ──────────────────────────────────────────────────────────
-  const language = currentUser?.language || 'en';
 
   function setLanguage(lang) {
     const updated = { ...currentUser, language: lang };

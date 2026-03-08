@@ -31,6 +31,7 @@ const userSchema = new mongoose.Schema({
 });
 const userProgressSchema = new mongoose.Schema({
   user_id: mongoose.Schema.Types.ObjectId,
+  language: { type: String, default: 'en' },
   globalDayCounter: { type: Number, default: 1 },
   studyStartDate: String, lastStudyDate: String,
   todayCompleted: [String],

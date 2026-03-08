@@ -1,5 +1,6 @@
 import { useApp } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import { CalendarDays, Flame, GraduationCap, CheckCircle2, Trash2 } from 'lucide-react';
 
 const PHRASE_COLORS = {
   affirmative:   '#22c55e',
@@ -15,9 +16,9 @@ const PHRASE_SYMBOLS = {
 
 function CalendarView({ history, language }) {
   const today = new Date();
-  const year = today.getFullYear();
+  const year  = today.getFullYear();
   const month = today.getMonth();
-  const firstDay = new Date(year, month, 1).getDay();
+  const firstDay   = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
   const monthName = today.toLocaleDateString(language === 'en' ? 'en-US' : 'es-ES', {
@@ -25,8 +26,8 @@ function CalendarView({ history, language }) {
   });
 
   const dayNames = language === 'en'
-    ? ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    : ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+    ? ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+    : ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
 
   const cells = [];
   for (let i = 0; i < firstDay; i++) cells.push(null);
@@ -36,29 +37,25 @@ function CalendarView({ history, language }) {
     <div className="calendar">
       <div className="calendar-header">{monthName}</div>
       <div className="calendar-grid">
-        {dayNames.map(d => (
-          <div key={d} className="calendar-day-name">{d}</div>
+        {dayNames.map((d, i) => (
+          <div key={i} className="calendar-day-name">{d}</div>
         ))}
         {cells.map((day, i) => {
-          if (!day) return <div key={`empty-${i}`} />;
+          if (!day) return <div key={`e-${i}`} />;
           const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-          const entry = history[dateStr];
+          const entry   = history[dateStr];
           const isToday = day === today.getDate();
-          const hasActivity = !!entry;
           const allDone = entry && entry.completed >= entry.total;
 
           return (
             <div
               key={dateStr}
-              className={`calendar-day ${isToday ? 'calendar-day--today' : ''} ${allDone ? 'calendar-day--done' : hasActivity ? 'calendar-day--partial' : ''}`}
+              className={`calendar-day ${isToday ? 'calendar-day--today' : ''} ${allDone ? 'calendar-day--done' : entry ? 'calendar-day--partial' : ''}`}
               title={entry ? `${entry.completed}/${entry.total} modes` : ''}
             >
               {day}
-              {hasActivity && (
-                <span
-                  className="calendar-dot"
-                  style={{ background: allDone ? '#22c55e' : '#f59e0b' }}
-                />
+              {entry && (
+                <span className="calendar-dot" style={{ background: allDone ? '#22c55e' : '#f59e0b' }} />
               )}
             </div>
           );
@@ -70,9 +67,9 @@ function CalendarView({ history, language }) {
 
 export default function Progress() {
   const navigate = useNavigate();
-  const { language, globalDayCounter, dailyHistory, db, modeProgress, phraseType, resetProgress } = useApp();
+  const { language, globalDayCounter, dailyHistory, db, modeProgress, resetProgress } = useApp();
 
-  const totalDaysStudied = Object.keys(dailyHistory).length;
+  const totalDaysStudied    = Object.keys(dailyHistory).length;
   const totalModesCompleted = Object.values(dailyHistory).reduce((acc, d) => acc + (d.completed || 0), 0);
 
   const streak = (() => {
@@ -97,40 +94,31 @@ export default function Progress() {
     }
   };
 
+  const stats = [
+    { icon: <CalendarDays size={22} strokeWidth={1.5} />, value: globalDayCounter, label: language === 'en' ? 'Total Days' : 'Días Totales' },
+    { icon: <Flame size={22} strokeWidth={1.5} />,        value: streak,           label: language === 'en' ? 'Streak' : 'Racha' },
+    { icon: <GraduationCap size={22} strokeWidth={1.5} />, value: totalDaysStudied, label: language === 'en' ? 'Days Studied' : 'Días Estudiados' },
+    { icon: <CheckCircle2 size={22} strokeWidth={1.5} />, value: totalModesCompleted, label: language === 'en' ? 'Modes Done' : 'Modos Hechos' },
+  ];
+
   return (
     <div className="progress-page">
       <h2 className="progress-title">
         {language === 'en' ? 'My Progress' : 'Mi Progreso'}
       </h2>
 
-      {/* Stats cards */}
       <div className="stats-grid">
-        <div className="stat-card">
-          <div className="stat-icon">📅</div>
-          <div className="stat-value">{globalDayCounter}</div>
-          <div className="stat-label">{language === 'en' ? 'Total Days' : 'Días Totales'}</div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">🔥</div>
-          <div className="stat-value">{streak}</div>
-          <div className="stat-label">{language === 'en' ? 'Day Streak' : 'Racha'}</div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">📚</div>
-          <div className="stat-value">{totalDaysStudied}</div>
-          <div className="stat-label">{language === 'en' ? 'Days Studied' : 'Días Estudiados'}</div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">✓</div>
-          <div className="stat-value">{totalModesCompleted}</div>
-          <div className="stat-label">{language === 'en' ? 'Modes Done' : 'Modos Completados'}</div>
-        </div>
+        {stats.map((s, i) => (
+          <div key={i} className="stat-card">
+            <div className="stat-icon">{s.icon}</div>
+            <div className="stat-value">{s.value}</div>
+            <div className="stat-label">{s.label}</div>
+          </div>
+        ))}
       </div>
 
-      {/* Calendar */}
       <CalendarView history={dailyHistory} language={language} />
 
-      {/* Mode progress table */}
       <div className="mode-progress-section">
         <h3 className="section-title">
           {language === 'en' ? 'Mode Progress' : 'Progreso por Modo'}
@@ -138,23 +126,18 @@ export default function Progress() {
         <div className="mode-progress-list">
           {db.modes.map(mode => {
             const sets = db.sentence_sets.filter(s => s.mode_id === mode.id);
-            const progress = modeProgress[mode.id] || { nextSetIndex: 0 };
-            const currentSetIdx = progress.nextSetIndex % Math.max(sets.length, 1);
-            const pct = sets.length > 0 ? Math.round((currentSetIdx / sets.length) * 100) : 0;
+            const prog = modeProgress[mode.id] || { nextSetIndex: 0 };
+            const cur  = prog.nextSetIndex % Math.max(sets.length, 1);
+            const pct  = sets.length > 0 ? Math.round((cur / sets.length) * 100) : 0;
 
             return (
               <div key={mode.id} className="mode-progress-item">
                 <div className="mode-progress-name">{mode.name[language]}</div>
                 <div className="mode-progress-bar-wrap">
                   <div className="mode-progress-bar-bg">
-                    <div
-                      className="mode-progress-bar-fill"
-                      style={{ width: `${pct}%` }}
-                    />
+                    <div className="mode-progress-bar-fill" style={{ width: `${pct}%` }} />
                   </div>
-                  <span className="mode-progress-pct">
-                    {currentSetIdx}/{sets.length} {language === 'en' ? 'sets' : 'sets'}
-                  </span>
+                  <span className="mode-progress-pct">{cur}/{sets.length}</span>
                 </div>
               </div>
             );
@@ -162,7 +145,6 @@ export default function Progress() {
         </div>
       </div>
 
-      {/* Recent history */}
       {Object.keys(dailyHistory).length > 0 && (
         <div className="history-section">
           <h3 className="section-title">
@@ -199,6 +181,7 @@ export default function Progress() {
 
       <div className="progress-footer">
         <button className="btn btn-danger" onClick={handleReset}>
+          <Trash2 size={15} strokeWidth={2} />
           {language === 'en' ? 'Reset Progress' : 'Reiniciar Progreso'}
         </button>
       </div>

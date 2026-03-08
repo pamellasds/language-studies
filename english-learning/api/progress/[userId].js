@@ -11,15 +11,17 @@ module.exports = async (req, res) => {
   const { userId } = req.query;
 
   if (req.method === 'GET') {
-    const p = await UserProgress.findOne({ user_id: userId });
+    const lang = req.query.lang || 'en';
+    const p = await UserProgress.findOne({ user_id: userId, language: lang });
     if (!p) return res.status(404).json({ error: 'Not found' });
     return res.json(p);
   }
 
   if (req.method === 'PUT') {
-    const { globalDayCounter, studyStartDate, lastStudyDate, todayCompleted, modeProgress, dailyHistory } = req.body;
+    const { language, globalDayCounter, studyStartDate, lastStudyDate, todayCompleted, modeProgress, dailyHistory } = req.body;
+    const lang = language || 'en';
     const p = await UserProgress.findOneAndUpdate(
-      { user_id: userId },
+      { user_id: userId, language: lang },
       { globalDayCounter, studyStartDate, lastStudyDate, todayCompleted, modeProgress, dailyHistory },
       { new: true, upsert: true }
     );

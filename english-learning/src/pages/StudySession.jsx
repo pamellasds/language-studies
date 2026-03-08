@@ -1,6 +1,45 @@
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { CheckCircle2, XCircle, ArrowRight, BookHeart, Volume2, Loader2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+
+const LANG_VOICE = { en: 'en-US', es: 'es-ES' };
+
+function useSpeech() {
+  const [speaking, setSpeaking] = useState(false);
+
+  function speak(text, lang) {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = LANG_VOICE[lang] || 'en-US';
+    u.rate = 0.88;
+    u.onstart = () => setSpeaking(true);
+    u.onend = () => setSpeaking(false);
+    u.onerror = () => setSpeaking(false);
+    window.speechSynthesis.speak(u);
+  }
+
+  return { speak, speaking };
+}
+
+function SpeakBtn({ text, lang }) {
+  const { speak, speaking } = useSpeech();
+  return (
+    <button
+      className="btn-speak"
+      onClick={() => speak(text, lang)}
+      title="Listen"
+      type="button"
+    >
+      {speaking
+        ? <Loader2 size={16} strokeWidth={2} className="spin" />
+        : <Volume2 size={16} strokeWidth={2} />}
+    </button>
+  );
+}
+
+const WRONG_KEY = 'study_wrong_queue';
 
 const PHRASE_LABELS = {
   affirmative:  { en: 'Affirmative (+)', es: 'Afirmativa (+)', color: '#22c55e' },
@@ -13,12 +52,15 @@ function normalizeText(text) {
     .toLowerCase()
     .replace(/['']/g, "'")
     .replace(/[""]/g, '"')
+    .replace(/[.,!?;:\-–—]+/g, ' ')  // punctuation → space
     .replace(/\s+/g, ' ')
     .trim();
 }
 
 export default function StudySession() {
   const { modeIndex } = useParams();
+  const [searchParams] = useSearchParams();
+  const isRetry = searchParams.get('retry') === 'true';
   const navigate = useNavigate();
   const { language, phraseType, getTodayPlan, completeMode, db } = useApp();
 
@@ -28,14 +70,12 @@ export default function StudySession() {
 
   const [input, setInput] = useState('');
   const [feedback, setFeedback] = useState(null); // null | 'correct' | 'incorrect'
-  const [showPhrase, setShowPhrase] = useState(false);
   const [completed, setCompleted] = useState(false);
   const inputRef = useRef(null);
 
   useEffect(() => {
     setInput('');
     setFeedback(null);
-    setShowPhrase(false);
     setCompleted(false);
     if (inputRef.current) inputRef.current.focus();
   }, [currentIndex]);
@@ -51,8 +91,8 @@ export default function StudySession() {
     );
   }
 
-  if (item.completed) {
-    // Skip to next
+  if (item.completed && !isRetry) {
+    // Skip to next incomplete
     const next = plan.findIndex((p, i) => i > currentIndex && !p.completed);
     if (next >= 0) navigate(`/study/${next}`, { replace: true });
     else navigate('/');
@@ -72,26 +112,44 @@ export default function StudySession() {
     if (!input.trim()) return;
     const correct = normalizeText(input) === normalizeText(targetPhrase);
     setFeedback(correct ? 'correct' : 'incorrect');
-    setShowPhrase(true);
-    if (correct) {
-      setCompleted(true);
-    }
-  }
-
-  function handleRetry() {
-    setInput('');
-    setFeedback(null);
-    setShowPhrase(false);
-    if (inputRef.current) inputRef.current.focus();
+    if (correct) setCompleted(true);
   }
 
   function handleNext() {
+    if (isRetry) {
+      // In retry mode: advance through wrong queue
+      const queue = JSON.parse(sessionStorage.getItem(WRONG_KEY) || '[]');
+      const pos = queue.indexOf(currentIndex);
+      const nextWrong = queue[pos + 1];
+      if (nextWrong !== undefined) {
+        navigate(`/study/${nextWrong}?retry=true`);
+      } else {
+        sessionStorage.removeItem(WRONG_KEY);
+        navigate('/');
+      }
+      return;
+    }
+
+    // Track wrong answers for retry at end
+    if (feedback === 'incorrect') {
+      const queue = JSON.parse(sessionStorage.getItem(WRONG_KEY) || '[]');
+      if (!queue.includes(currentIndex)) {
+        sessionStorage.setItem(WRONG_KEY, JSON.stringify([...queue, currentIndex]));
+      }
+    }
+
     completeMode(mode.id);
     const nextIncomplete = plan.findIndex((p, i) => i > currentIndex && !p.completed);
     if (nextIncomplete >= 0) {
       navigate(`/study/${nextIncomplete}`);
     } else {
-      navigate('/');
+      // All modes done — retry wrong answers if any
+      const queue = JSON.parse(sessionStorage.getItem(WRONG_KEY) || '[]');
+      if (queue.length > 0) {
+        navigate(`/study/${queue[0]}?retry=true`);
+      } else {
+        navigate('/');
+      }
     }
   }
 
@@ -102,8 +160,11 @@ export default function StudySession() {
     }
   }
 
-  const completedCount = plan.filter(p => p.completed).length;
-  const totalCount = plan.length;
+  const wrongQueue = JSON.parse(sessionStorage.getItem(WRONG_KEY) || '[]');
+  const completedCount = isRetry
+    ? wrongQueue.indexOf(currentIndex) + 1
+    : plan.filter(p => p.completed).length;
+  const totalCount = isRetry ? wrongQueue.length : plan.length;
 
   return (
     <div className="study-session">
@@ -116,10 +177,17 @@ export default function StudySession() {
       </div>
 
       <div className="session-header">
-        <button className="btn-back" onClick={() => navigate('/')}>
+        <button className="btn-back" onClick={() => { sessionStorage.removeItem(WRONG_KEY); navigate('/'); }}>
           ← {language === 'en' ? 'Dashboard' : 'Inicio'}
         </button>
-        <div className="session-counter">{completedCount + 1}/{totalCount}</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          {isRetry && (
+            <span style={{ fontSize: '0.75rem', background: '#f59e0b22', color: '#f59e0b', padding: '2px 8px', borderRadius: '999px', border: '1px solid #f59e0b55' }}>
+              {language === 'en' ? 'Retrying errors' : 'Revisando errores'}
+            </span>
+          )}
+          <div className="session-counter">{completedCount}/{totalCount}</div>
+        </div>
       </div>
 
       <div className="session-card">
@@ -127,7 +195,7 @@ export default function StudySession() {
         <div className="session-mode-header">
           <div className="session-mode-name">{mode.name[language]}</div>
           <div className="session-category">
-            {isBible && <span className="bible-badge">✟ Bible</span>}
+            {isBible && <span className="bible-badge"><BookHeart size={12} strokeWidth={2} /> Bible</span>}
             <span className="category-badge">{category?.name[language]}</span>
             <span
               className="phrase-type-badge-sm"
@@ -149,6 +217,7 @@ export default function StudySession() {
           <div className="session-verb-block">
             <div className="session-verb">
               <span className="verb-word">{verb.word[language]}</span>
+              <SpeakBtn text={verb.word[language]} lang={language} />
             </div>
             <div className="session-verb-def">{verb.definition[language]}</div>
           </div>
@@ -165,7 +234,8 @@ export default function StudySession() {
             {language === 'en' ? 'Phrase to practice:' : 'Frase para practicar:'}
           </div>
           <div className="session-phrase">
-            "{targetPhrase}"
+            <span>"{targetPhrase}"</span>
+            <SpeakBtn text={targetPhrase} lang={language} />
           </div>
           {isBible && bibleRef && (
             <div className="bible-reference">
@@ -197,13 +267,13 @@ export default function StudySession() {
             <div className={`feedback-box ${feedback === 'correct' ? 'feedback-correct' : 'feedback-incorrect'}`}>
               {feedback === 'correct' ? (
                 <>
-                  <span className="feedback-icon">✓</span>
-                  {language === 'en' ? 'Correct! Well done.' : '¡Correcto! ¡Bien hecho.'}
+                  <CheckCircle2 size={18} strokeWidth={2} className="feedback-icon" />
+                  {language === 'en' ? 'Correct! Well done.' : '¡Correcto! ¡Bien hecho!'}
                 </>
               ) : (
                 <>
-                  <span className="feedback-icon">✗</span>
-                  {language === 'en' ? 'Not quite. The correct phrase:' : 'Casi. La frase correcta:'}
+                  <XCircle size={18} strokeWidth={2} className="feedback-icon" />
+                  <span>{language === 'en' ? 'Not quite. Correct phrase:' : 'Casi. Frase correcta:'}</span>
                   <div className="correct-phrase">"{targetPhrase}"</div>
                 </>
               )}
@@ -217,20 +287,16 @@ export default function StudySession() {
                 {language === 'en' ? 'Check' : 'Verificar'}
               </button>
             )}
-            {feedback === 'incorrect' && (
-              <button className="btn btn-secondary" onClick={handleRetry}>
-                {language === 'en' ? 'Try Again' : 'Intentar de nuevo'}
-              </button>
-            )}
-            {(feedback === 'correct' || feedback === 'incorrect') && (
+            {feedback && (
               <button
                 className="btn btn-next"
                 onClick={handleNext}
                 style={{ borderColor: phraseLabel.color, color: phraseLabel.color }}
               >
-                {currentIndex === totalCount - 1
-                  ? (language === 'en' ? 'Finish Session ✓' : 'Finalizar Sesión ✓')
-                  : (language === 'en' ? 'Next Mode →' : 'Siguiente Modo →')}
+                {isRetry && completedCount === totalCount
+                  ? (language === 'en' ? 'Finish' : 'Finalizar')
+                  : (language === 'en' ? 'Next' : 'Siguiente')}
+                <ArrowRight size={16} strokeWidth={2} />
               </button>
             )}
           </div>

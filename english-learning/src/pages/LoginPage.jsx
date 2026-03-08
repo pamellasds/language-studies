@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BookOpen, LogIn } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export default function LoginPage() {
@@ -21,9 +22,9 @@ export default function LoginPage() {
     <div className="login-wrap">
       <div className="login-card">
         <div className="login-logo">
-          <span className="login-logo-icon">📖</span>
+          <BookOpen size={40} strokeWidth={1.5} style={{ color: '#6366f1' }} />
           <h1 className="login-title">Language Learning</h1>
-          <p className="login-subtitle">English &amp; Spanish by Spaced Repetition</p>
+          <p className="login-subtitle">English &amp; Spanish · Spaced Repetition</p>
         </div>
 
         <form className="login-form" onSubmit={handleSubmit}>
@@ -57,6 +58,7 @@ export default function LoginPage() {
           {error && <div className="login-error">{error}</div>}
 
           <button className="btn btn-primary login-btn" type="submit" disabled={loading}>
+            <LogIn size={16} strokeWidth={2} />
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>

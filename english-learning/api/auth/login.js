@@ -20,10 +20,12 @@ module.exports = async (req, res) => {
     if (!user || !bcrypt.compareSync(password, user.password_hash))
       return res.status(401).json({ error: 'Invalid credentials' });
 
-    let progress = await UserProgress.findOne({ user_id: user._id });
+    const lang = user.language || 'en';
+    let progress = await UserProgress.findOne({ user_id: user._id, language: lang });
     if (!progress) {
       progress = await UserProgress.create({
         user_id: user._id,
+        language: lang,
         studyStartDate: new Date().toISOString().split('T')[0],
       });
     }

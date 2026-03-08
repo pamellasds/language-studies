@@ -18,6 +18,15 @@ const BLANK_PROGRESS = {
   lastStudyDate:    null,
 };
 
+// Advance day counter if the user didn't study today
+function advanceDay(prog) {
+  const today = new Date().toISOString().split('T')[0];
+  if (!prog.lastStudyDate || prog.lastStudyDate === today) return prog;
+  const diff = Math.round((new Date(today) - new Date(prog.lastStudyDate)) / 86400000);
+  if (diff < 1) return prog;
+  return { ...prog, globalDayCounter: prog.globalDayCounter + diff, todayCompleted: [] };
+}
+
 export function AppProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(loadSession);
   const [progress, setProgress]       = useState(BLANK_PROGRESS);
@@ -42,30 +51,20 @@ export function AppProvider({ children }) {
   useEffect(() => {
     const session = loadSession();
     if (!session) { setDbLoading(false); return; }
+    const lang = session.language || 'en';
     fetch(`${API_BASE}/auth/me/${session.id}`)
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (!data) { localStorage.removeItem(SESSION_KEY); setCurrentUser(null); return; }
         setCurrentUser(data.user);
-        if (data.progress?.globalDayCounter) setProgress(data.progress);
+        // Load progress for the saved language
+        return fetch(`${API_BASE}/progress/${session.id}?lang=${lang}`);
+      })
+      .then(r => (r && r.ok) ? r.json() : null)
+      .then(prog => {
+        if (prog?.globalDayCounter) setProgress(advanceDay(prog));
       })
       .catch(() => {});
-  }, []);
-
-  // ── Auto-advance day on new calendar day ──────────────────────────────
-  useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
-    if (progress.lastStudyDate && progress.lastStudyDate !== today) {
-      const diff = Math.round((new Date(today) - new Date(progress.lastStudyDate)) / 86400000);
-      if (diff >= 1) {
-        setProgress(prev => ({
-          ...prev,
-          globalDayCounter: prev.globalDayCounter + diff,
-          todayCompleted:   [],
-          lastStudyDate:    today,
-        }));
-      }
-    }
   }, []);
 
   // ── Debounced sync to MongoDB ─────────────────────────────────────────
@@ -76,10 +75,10 @@ export function AppProvider({ children }) {
       fetch(`${API_BASE}/progress/${currentUser.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newProgress),
+        body: JSON.stringify({ ...newProgress, language }),
       }).catch(() => {});
     }, 800);
-  }, [currentUser]);
+  }, [currentUser, language]);
 
   // ── Login ─────────────────────────────────────────────────────────────
   async function login(username, password) {
@@ -93,7 +92,7 @@ export function AppProvider({ children }) {
       if (!r.ok) return data.error || 'Login failed';
       localStorage.setItem(SESSION_KEY, JSON.stringify(data.user));
       setCurrentUser(data.user);
-      setProgress(data.progress?.globalDayCounter ? data.progress : BLANK_PROGRESS);
+      setProgress(data.progress?.globalDayCounter ? advanceDay(data.progress) : BLANK_PROGRESS);
       return null;
     } catch {
       return 'Could not reach server';
@@ -120,6 +119,13 @@ export function AppProvider({ children }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: currentUser.id, language: lang }),
       }).catch(() => {});
+      // Load progress for the new language
+      fetch(`${API_BASE}/progress/${currentUser.id}?lang=${lang}`)
+        .then(r => r.ok ? r.json() : null)
+        .then(prog => {
+          setProgress(prog?.globalDayCounter ? advanceDay(prog) : BLANK_PROGRESS);
+        })
+        .catch(() => setProgress(BLANK_PROGRESS));
     }
   }
 

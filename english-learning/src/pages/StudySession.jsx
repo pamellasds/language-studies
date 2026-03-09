@@ -78,7 +78,7 @@ export default function StudySession() {
     setFeedback(null);
     setCompleted(false);
     if (inputRef.current) inputRef.current.focus();
-  }, [currentIndex]);
+  }, [currentIndex, isRetry]);
 
   if (!item || !item.sentenceSet) {
     return (
@@ -117,7 +117,8 @@ export default function StudySession() {
 
   function handleNext() {
     if (isRetry) {
-      // In retry mode: advance through wrong queue
+      // Advance sentence set only if correct
+      completeMode(mode.id, feedback === 'correct');
       const queue = JSON.parse(sessionStorage.getItem(WRONG_KEY) || '[]');
       const pos = queue.indexOf(currentIndex);
       const nextWrong = queue[pos + 1];
@@ -138,7 +139,8 @@ export default function StudySession() {
       }
     }
 
-    completeMode(mode.id);
+    // Advance sentence set only if correct
+    completeMode(mode.id, feedback === 'correct');
     const nextIncomplete = plan.findIndex((p, i) => i > currentIndex && !p.completed);
     if (nextIncomplete >= 0) {
       navigate(`/study/${nextIncomplete}`);

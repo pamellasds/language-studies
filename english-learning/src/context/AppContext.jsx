@@ -147,11 +147,11 @@ export function AppProvider({ children }) {
     }));
   }
 
-  function completeMode(modeId) {
+  function completeMode(modeId, shouldAdvance = true) {
     const today = new Date().toISOString().split('T')[0];
     const sets  = db.sentence_sets.filter(s => s.mode_id === modeId);
     const cur   = (progress.modeProgress[modeId]?.nextSetIndex || 0) % Math.max(sets.length, 1);
-    const next  = (cur + 1) % Math.max(sets.length, 1);
+    const next  = shouldAdvance ? (cur + 1) % Math.max(sets.length, 1) : cur;
 
     setProgress(prev => {
       const newCompleted = prev.todayCompleted.includes(modeId)

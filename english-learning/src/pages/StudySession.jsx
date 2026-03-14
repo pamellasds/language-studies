@@ -91,14 +91,6 @@ export default function StudySession() {
     );
   }
 
-  if (item.completed && !isRetry) {
-    // Skip to next incomplete
-    const next = plan.findIndex((p, i) => i > currentIndex && !p.completed);
-    if (next >= 0) navigate(`/study/${next}`, { replace: true });
-    else navigate('/');
-    return null;
-  }
-
   const { mode, sentenceSet } = item;
   const verb = db.verbs.find(v => v.id === sentenceSet.verb_id);
   const category = db.categories.find(c => c.id === sentenceSet.category_id);

@@ -72,10 +72,10 @@ export default function Dashboard() {
             <div
               key={item.mode.id}
               className={`mode-card ${item.completed ? 'mode-card--done' : ''} ${isNext ? 'mode-card--next' : ''}`}
-              onClick={() => !item.completed && navigate(`/study/${index}`)}
+              onClick={() => navigate(`/study/${index}`)}
               role="button"
               tabIndex={0}
-              onKeyDown={e => e.key === 'Enter' && !item.completed && navigate(`/study/${index}`)}
+              onKeyDown={e => e.key === 'Enter' && navigate(`/study/${index}`)}
             >
               <div className="mode-card-status">
                 {item.completed ? (

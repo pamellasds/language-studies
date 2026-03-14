@@ -148,34 +148,32 @@ export function AppProvider({ children }) {
   }
 
   function completeMode(modeId, shouldAdvance = true) {
-    const today = new Date().toISOString().split('T')[0];
-    const sets  = db.sentence_sets.filter(s => s.mode_id === modeId);
-    const cur   = (progress.modeProgress[modeId]?.nextSetIndex || 0) % Math.max(sets.length, 1);
-    const next  = shouldAdvance ? (cur + 1) % Math.max(sets.length, 1) : cur;
+    const today    = new Date().toISOString().split('T')[0];
+    const sets     = db.sentence_sets.filter(s => s.mode_id === modeId);
+    const cur      = (progress.modeProgress[modeId]?.nextSetIndex || 0) % Math.max(sets.length, 1);
+    const next     = shouldAdvance ? (cur + 1) % Math.max(sets.length, 1) : cur;
 
-    setProgress(prev => {
-      const newCompleted = prev.todayCompleted.includes(modeId)
-        ? prev.todayCompleted : [...prev.todayCompleted, modeId];
-      const allModes = db.modes.map(m => m.id);
-      const allDone  = allModes.every(id => newCompleted.includes(id));
+    const newCompleted = progress.todayCompleted.includes(modeId)
+      ? progress.todayCompleted : [...progress.todayCompleted, modeId];
+    const allModes = db.modes.map(m => m.id);
+    const allDone  = allModes.every(id => newCompleted.includes(id));
 
-      const newHistory = { ...prev.dailyHistory };
-      if (!newHistory[today]) newHistory[today] = { completed: 0, total: db.modes.length };
-      newHistory[today] = { ...newHistory[today], completed: newCompleted.length, phraseType };
+    const newHistory = { ...progress.dailyHistory };
+    if (!newHistory[today]) newHistory[today] = { completed: 0, total: db.modes.length };
+    newHistory[today] = { ...newHistory[today], completed: newCompleted.length, phraseType };
 
-      const updated = {
-        ...prev,
-        todayCompleted: newCompleted,
-        lastStudyDate:  today,
-        modeProgress:   { ...prev.modeProgress, [modeId]: { nextSetIndex: next } },
-        dailyHistory:   newHistory,
-        globalDayCounter:
-          allDone && !prev.todayCompleted.includes(modeId) && newCompleted.length === allModes.length
-            ? prev.globalDayCounter + 1 : prev.globalDayCounter,
-      };
-      syncProgress(updated);
-      return updated;
-    });
+    const updated = {
+      ...progress,
+      todayCompleted: newCompleted,
+      lastStudyDate:  today,
+      modeProgress:   { ...progress.modeProgress, [modeId]: { nextSetIndex: next } },
+      dailyHistory:   newHistory,
+      globalDayCounter:
+        allDone && !progress.todayCompleted.includes(modeId) && newCompleted.length === allModes.length
+          ? progress.globalDayCounter + 1 : progress.globalDayCounter,
+    };
+    setProgress(updated);
+    syncProgress(updated);
   }
 
   function resetProgress() {

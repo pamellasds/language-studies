@@ -110,6 +110,17 @@ export function AppProvider({ children }) {
   }
 
   function setLanguage(lang) {
+    if (lang === language) return;
+    // Flush any pending debounced save for the current language before switching
+    clearTimeout(syncTimer.current);
+    if (currentUser) {
+      fetch(`${API_BASE}/progress/${currentUser.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...progress, language }),
+      }).catch(() => {});
+    }
+
     const updated = { ...currentUser, language: lang };
     setCurrentUser(updated);
     localStorage.setItem(SESSION_KEY, JSON.stringify(updated));
